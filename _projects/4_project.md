@@ -2,7 +2,6 @@
 layout: page
 title: Analyzing Cross-Border Truck Activity to Inform California’s Transition to Zero-Emission Trucks
 description: Sponsor by Resilient and Innovative Mobility Initiative (RIMI)
-img: /assets/img/12.jpg
 importance: 3
 category: Past
 ---
