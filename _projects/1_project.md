@@ -2,7 +2,7 @@
 layout: page
 title: Drive-by Sensing for Urban Truck Characterization using Google Street View Imagery
 description: |
-  Sponsor by US DOT - UTC SEMPACT Center
+  Sponsor: US DOT - UTC SEMPACT Center
   Role: PI
   Year: 2024 - 2025
 #img: assets/img/gsv_truck.png
