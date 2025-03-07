@@ -5,7 +5,7 @@ description: |
   Sponsor: US DOT – UTC TBD National Center
   Role: PI
   Year: 2024-2026
-#img: assets/img/lidar_project.gif
+#img: assets/img/lidar_project.png
 importance: 2
 category: Current
 giscus_comments: false
