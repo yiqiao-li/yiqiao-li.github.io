@@ -18,6 +18,16 @@ profiles:
     image: bo.jpg
     content: bo.md
     image_circular: false # crops the image to make it circular
+  
+  - align: left
+    image: kevin.jpg
+    content: kevin.md
+    image_circular: false # crops the image to make it circular
+
+  - align: left
+    image: wenjie.png
+    content: wenjie.md
+    image_circular: false # crops the image to make it circular
 
   - align: left
     image: 6.jpg
@@ -29,14 +39,6 @@ profiles:
     content: blanche.md
     image_circular: false # crops the image to make it circular
 
-  - align: left
-    image: kevin.jpg
-    content: kevin.md
-    image_circular: false # crops the image to make it circular
 
-  - align: left
-    image: wenjie.png
-    content: wenjie.md
-    image_circular: false # crops the image to make it circular
     
 ---
