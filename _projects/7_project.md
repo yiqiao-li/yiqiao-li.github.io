@@ -2,7 +2,6 @@
 layout: page
 title: Improved California Truck Traffic Census Reporting and Spatial Activity Measurement
 description: Sponsor by Road Repair and Accountability Act of 2017 (SB1) and California Air Resources Board
-img: assets/img/4.jpg
 importance: 1
 category: Past
 related_publications: true
