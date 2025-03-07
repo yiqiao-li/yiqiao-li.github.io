@@ -2,7 +2,6 @@
 layout: page
 title: Drayage Truck Activity and California Inland Ports
 description: Sponsor by Road Repair and Accountability Act of 2017 (SB1) and California Air Resources Board
-img: assets/img/1.jpg
 importance: 3
 category: Past
 ---
