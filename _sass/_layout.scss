@@ -31,16 +31,16 @@ body.sticky-bottom-footer {
   max-width: $max-content-width;
 }
 
-// Profile
-//.profile {
-//  img {
-//    width: 100%;
-//  }
-//}
+Profile
+.profile {
+ img {
+   width: 100%;
+ }
+}
 .profile {
   img {
-    width: 300px;       /* Set to a fixed width */
-    height: 300px;      /* Set to a fixed height */
+    width: 150px;       /* Set to a fixed width */
+    height: 150px;      /* Set to a fixed height */
     object-fit: cover;  /* Ensures the image covers the space and doesn't stretch */
     border-radius: 50%; /* Optional: makes the image circular */
   }
