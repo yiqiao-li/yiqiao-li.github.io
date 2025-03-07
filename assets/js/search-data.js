@@ -409,7 +409,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-drive-by-sensing-for-urban-truck-characterization-using-google-street-view-imagery",
           title: 'Drive-by Sensing for Urban Truck Characterization using Google Street View Imagery',
-          description: "Sponsor by US DOT - UTC SEMPACT Center",
+          description: "Sponsor by US DOT - UTC SEMPACT CenterRole: PIYear: 2024 - 2025",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-investigation-of-emerging-sensing-and-ai-ml-technologies-to-enhance-the-safety-of-vulnerable-roadway-users-at-signalized-intersection",
