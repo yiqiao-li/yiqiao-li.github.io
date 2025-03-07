@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Investigation of Emerging Sensing and AI/ML Technologies to Enhance the Safety of Vulnerable Roadway Users at Signalized Intersection
-description: 
+description: |
   Sponsor: US DOT – UTC TBD National Center
   Role: PI
   Year: 2024-2026
