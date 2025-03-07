@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Developing a Robust Traffic Network Model for Transportation Policy Analysis of Northern Manhattan
-description:|
+description: |
   Sponsor: US DOT – UTC Region 2 SEMPACT center
   Role: co-PI
   Year: 2024-2026
