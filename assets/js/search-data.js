@@ -417,9 +417,9 @@ ninja.data = [{
           description: "{&quot;Sponsor&quot;=&gt;&quot;US DOT – UTC TBD National Center&quot;, &quot;Role&quot;=&gt;&quot;PI&quot;, &quot;Year&quot;=&gt;&quot;2024-2026&quot;}",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-developing-a-robust-traffic-network-model-for-transportation-policy-analysis-of-northern-manhattan",
+          title: 'Developing a Robust Traffic Network Model for Transportation Policy Analysis of Northern Manhattan...',
+          description: "Sponsor: US DOT – UTC Region 2 SEMPACT centerRole: co-PIYear: 2024-2026",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-analyzing-cross-border-truck-activity-to-inform-california-s-transition-to-zero-emission-trucks",
