@@ -16,19 +16,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-publications",
-          title: "Publications",
-          description: "Selected Publications.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
-          },
         },{id: "nav-people",
           title: "People",
           description: "Group Members",
           section: "Navigation",
           handler: () => {
             window.location.href = "/people/";
+          },
+        },{id: "nav-publications",
+          title: "Publications",
+          description: "Selected Publications.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
           },
         },{id: "nav-teaching",
           title: "Teaching",
@@ -442,14 +442,14 @@ ninja.data = [{
           description: "Sponsor by Road Repair and Accountability Act of 2017 (SB1) and California Air Resources Board",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
+            },},{id: "projects-nyc-dot-transit-tech-lab-curb-activity-challenge",
+          title: 'NYC DOT - Transit Tech Lab Curb Activity Challenge',
+          description: "Sponsor: New York City Department of Transportation (NYC DOT)Role: CUNY PIYear: 2025",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+            },},{id: "projects-simulating-congestion-pricing-effects-on-traffic-patterns-in-neighboring-communities",
+          title: 'Simulating Congestion Pricing Effects on Traffic Patterns in Neighboring Communities',
+          description: "Sponsor: CUNY&#39;s Research Bridge FundRole: co-PIYear: 2025 - 2026",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
