@@ -1,6 +1,6 @@
 ## Yiqiao Li
 <p align='justify'>
-Yiqiao Li is an assistant professor of Civil Engineering at the City College of New York. Prior to joining CCNY in January 2024, Yiqiao worked as an Assistant Project Scientist at the Institute of Transportation Studies at the University of California Irvine (ITS- Irvine).
+Yiqiao Li is an assistant professor of Civil Engineering at the City College of New York. Prior to joining CCNY in January 2024, Yiqiao worked as an Assistant Project Scientist at the Institute of Transportation Studies at the University of California Irvine (ITS- Irvine). Yiqiao earned a Ph.D. degree in Civil and Environmental Engineering from the University of California, Irvine in 2021.
 </p>
 
 ---
