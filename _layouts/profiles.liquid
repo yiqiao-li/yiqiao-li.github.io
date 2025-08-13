@@ -4,32 +4,307 @@ layout: page
 
 <div class="post">
   <article>
-    {% if page.profiles %}
-      {% for profile in page.profiles %}
-        <hr>
-        <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
-          {% if profile.image %}
-            {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            <div class="profile-image-wrapper">
-              {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
+    <div class="people-quicklinks">
+      <strong>Jump to:</strong>
+      <a href="#pi">PI</a>
+      <a href="#postdoc">Postdoc</a>
+      <a href="#grad">Graduate</a>
+      <a href="#undergrad">Undergraduate</a>
+      <a href="#highschool">High School</a>
+      <a href="#past">Past Members</a>
+    </div>
+    <!-- Principal Investigator Section -->
+    {% if page.principal_investigator %}
+      <h2 class="section-title" id="pi">Principal Investigator</h2>
+      <div class="members-section">
+        {% for profile in page.principal_investigator %}
+          <div class="member-profile">
+            <div class="profile-container">
+              <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
+                {% if profile.image %}
+                  {% if profile.image contains 'http' %}
+                    {% assign profile_image_path = profile.image %}
+                  {% else %}
+                    {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+                  {% endif %}
+                  {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+                  {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                  <div class="profile-image-wrapper">
+                    {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
+                    {% if profile.name %}
+                      <div class="profile-name">{{ profile.name }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if profile.more_info %}
+                  <div class="more-info">
+                    {{ profile.more_info }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="clearfix">
+                {% if profile.content %}
+                  {% if profile.section %}
+                    {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                    {% assign lines = profile_content | split: '---' %}
+                    {% for line in lines %}
+                      {% if line contains profile.section %}
+                        {% assign section_content = line | split: profile.section | last %}
+                        {{ section_content | markdownify }}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+                  {% else %}
+                    {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                    {{ profile_content | markdownify }}
+                  {% endif %}
+                {% else %}
+                  {{ profile.excerpt }}
+                {% endif %}
+              </div>
             </div>
-          {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
-        </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
 
-        <div class="clearfix">
-          {% if profile.content %}
-            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
-          {% else %}
-            {{ content }}
-          {% endif %}
+    <!-- Current Members Section -->
+    {% if page.current_members %}
+      <h2 class="section-title">Current Members</h2>
+      
+      <!-- Postdoctoral Researcher Subsection -->
+      {% if page.current_members.postdoctoralresearcher %}
+        <h3 class="subsection-title" id="postdoc">Postdoctoral Researcher</h3>
+        <div class="members-section">
+          {% for profile in page.current_members.postdoctoralresearcher %}
+            <div class="member-profile">
+              
+              <div class="profile-container">
+                <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
+                  {% if profile.image %}
+                    {% if profile.image contains 'http' %}
+                      {% assign profile_image_path = profile.image %}
+                    {% else %}
+                      {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+                    {% endif %}
+                    {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                    <div class="profile-image-wrapper">
+                      {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
+                      {% if profile.name %}
+                        <div class="profile-name">{{ profile.name }}</div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if profile.more_info %}
+                    <div class="more-info">
+                      {{ profile.more_info }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="clearfix">
+                  {% if profile.content %}
+                    {% if profile.section %}
+                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                      {% assign lines = profile_content | split: '---' %}
+                      {% for line in lines %}
+                        {% if line contains profile.section %}
+                          {% assign section_content = line | split: profile.section | last %}
+                          {{ section_content | markdownify }}
+                          {% break %}
+                        {% endif %}
+                      {% endfor %}
+                    {% else %}
+                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                      {{ profile_content | markdownify }}
+                    {% endif %}
+                  {% else %}
+                    {{ profile.excerpt }}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
         </div>
+      {% endif %}
+
+      <!-- Graduate Students Subsection -->
+      {% if page.current_members.graduatestudents %}
+        <h3 class="subsection-title" id="grad">Graduate Students</h3>
+        <div class="members-section">
+          {% for profile in page.current_members.graduatestudents %}
+            <div class="member-profile">
+              
+              <div class="profile-container">
+                <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
+                  {% if profile.image %}
+                    {% if profile.image contains 'http' %}
+                      {% assign profile_image_path = profile.image %}
+                    {% else %}
+                      {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+                    {% endif %}
+                    {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                    <div class="profile-image-wrapper">
+                      {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
+                      {% if profile.name %}
+                        <div class="profile-name">{{ profile.name }}</div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if profile.more_info %}
+                    <div class="more-info">
+                      {{ profile.more_info }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="clearfix">
+                  {% if profile.content %}
+                    {% if profile.section %}
+                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                      {% assign lines = profile_content | split: '---' %}
+                      {% for line in lines %}
+                        {% if line contains profile.section %}
+                          {% assign section_content = line | split: profile.section | last %}
+                          {{ section_content | markdownify }}
+                          {% break %}
+                        {% endif %}
+                      {% endfor %}
+                    {% else %}
+                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                      {{ profile_content | markdownify }}
+                    {% endif %}
+                  {% else %}
+                    {{ profile.excerpt }}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <!-- Undergraduate Students Subsection -->
+      {% if page.current_members.undergraduatestudents %}
+        <h3 class="subsection-title" id="undergrad">Undergraduate Students</h3>
+        <div class="members-section">
+          {% for profile in page.current_members.undergraduatestudents %}
+            <div class="member-profile">
+              
+              <div class="profile-container">
+                <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
+                  {% if profile.image %}
+                    {% if profile.image contains 'http' %}
+                      {% assign profile_image_path = profile.image %}
+                    {% else %}
+                      {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+                    {% endif %}
+                    {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                    <div class="profile-image-wrapper">
+                      {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
+                      {% if profile.name %}
+                        <div class="profile-name">{{ profile.name }}</div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if profile.more_info %}
+                    <div class="more-info">
+                      {{ profile.more_info }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="clearfix">
+                  {% if profile.content %}
+                    {% if profile.section %}
+                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                      {% assign lines = profile_content | split: '---' %}
+                      {% for line in lines %}
+                        {% if line contains profile.section %}
+                          {% assign section_content = line | split: profile.section | last %}
+                          {{ section_content | markdownify }}
+                          {% break %}
+                        {% endif %}
+                      {% endfor %}
+                    {% else %}
+                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                      {{ profile_content | markdownify }}
+                    {% endif %}
+                  {% else %}
+                    {{ profile.excerpt }}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <!-- High School Students Subsection -->
+      {% if page.current_members.highschoolstudents and page.current_members.highschoolstudents.size > 0 %}
+        <h3 class="subsection-title" id="highschool">High School Students</h3>
+        <div class="members-section">
+          {% for profile in page.current_members.highschoolstudents %}
+            <div class="member-profile">
+              
+              <div class="profile-container">
+                <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
+                  {% if profile.image %}
+                    {% if profile.image contains 'http' %}
+                      {% assign profile_image_path = profile.image %}
+                    {% else %}
+                      {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+                    {% endif %}
+                    {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                    <div class="profile-image-wrapper">
+                      {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
+                    {% if profile.name %}
+                      <div class="profile-name">{{ profile.name }}</div>
+                    {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if profile.more_info %}
+                    <div class="more-info">
+                      {{ profile.more_info }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="clearfix">
+                  {% if profile.content %}
+                    {% if profile.section %}
+                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                      {% assign lines = profile_content | split: '---' %}
+                      {% for line in lines %}
+                        {% if line contains profile.section %}
+                          {% assign section_content = line | split: profile.section | last %}
+                          {{ section_content | markdownify }}
+                          {% break %}
+                        {% endif %}
+                      {% endfor %}
+                    {% else %}
+                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                      {{ profile_content | markdownify }}
+                    {% endif %}
+                  {% else %}
+                    {{ profile.excerpt }}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <!-- Past Members Section -->
+    {% if page.past_members %}
+      <h2 class="section-title" id="past">Past Members</h2>
+      <ul>
+      {% for member in page.past_members %}
+        <li>{{ member.name }}{% if member.affiliation %} — <em>{{ member.affiliation }}</em>{% endif %}</li>
       {% endfor %}
+      </ul>
     {% endif %}
   </article>
 </div>

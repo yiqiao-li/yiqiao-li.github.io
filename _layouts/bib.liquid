@@ -3,11 +3,23 @@
 <div class="row">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
-      {%- if entry.abbr -%}
-        {%- if site.data.venues[entry.abbr] -%}
+      {%- if entry.journal -%}
+        {%- assign venue_key = nil -%}
+        {%- if site.data.venues[entry.journal] -%}
+          {%- assign venue_key = entry.journal -%}
+        {%- else -%}
+          {%- for kv in site.data.venues -%}
+            {%- assign venue_name = kv[0] -%}
+            {%- if entry.journal contains venue_name -%}
+              {%- assign venue_key = venue_name -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        {%- if venue_key -%}
           {% assign venue_style = null %}
-          {% if site.data.venues[entry.abbr].color != blank %}
-            {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
+          {% if site.data.venues[venue_key].color != blank %}
+            {% assign venue_style = site.data.venues[venue_key].color | prepend: 'style="background-color:' | append: '"' %}
           {%- endif -%}
           <abbr
             class="badge rounded w-100"
@@ -15,14 +27,15 @@
               {{ venue_style }}
             {% endif -%}
           >
-            {% if site.data.venues[entry.abbr].url %}
-              <a href="{{ site.data.venues[entry.abbr].url }}">{{ entry.abbr }}</a>
+            {% assign venue_label = site.data.venues[venue_key].abbr | default: venue_key %}
+            {% if site.data.venues[venue_key].url %}
+              <a href="{{ site.data.venues[venue_key].url }}">{{ venue_label }}</a>
             {% else %}
-              <div>{{- entry.abbr -}}</div>
+              <div>{{- venue_label -}}</div>
             {% endif %}
           </abbr>
         {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+          <abbr class="badge rounded w-100">{{ entry.journal }}</abbr>
         {% endif %}
       {% endif %}
       {% if entry.preview %}

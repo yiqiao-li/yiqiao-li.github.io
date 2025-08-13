@@ -14,7 +14,7 @@ related_publications: false
 
 Year: 2024-2025
 
-Role: PI (Sole)
+PIs: Yiqiao Li
 
 Sponsor: US DOT - UTC SEMPACT Center
 
