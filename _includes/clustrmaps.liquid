@@ -2,6 +2,7 @@
   {% assign d_param = include.d | default: site.clustrmaps.d %}
   {% assign cl_param = include.cl | default: site.clustrmaps.cl | default: 'ffffff' %}
   {% assign w_param = include.w | default: site.clustrmaps.w | default: 'a' %}
+  {% assign dev_preview = include.dev_preview | default: false %}
   {% if d_param %}
     <div id="clustrmaps-container"></div>
     <script>
@@ -9,9 +10,10 @@
         try {
           var host = (window.location && window.location.hostname) || '';
           var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0';
+          var devPreview = '{{ dev_preview }}' === 'true';
           var container = document.getElementById('clustrmaps-container');
           if (!container) return;
-          if (isLocal) {
+          if (isLocal && !devPreview) {
             container.innerHTML =
               '<div style="padding: 1rem; border: 1px dashed var(--global-divider-color); border-radius: 8px; color: var(--global-text-color-light);">ClustrMaps preview is hidden in local development. View on the live site to see the map.</div>';
             return;
