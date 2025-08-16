@@ -13,8 +13,10 @@ nav_order: 4
 
 {% include bib_search.liquid %}
 
+{% if site.plugins contains 'jekyll-scholar' %}
 <div class="publications">
-
 {% bibliography %}
-
 </div>
+{% else %}
+<p>Publications listing requires <code>jekyll-scholar</code>. The site will include it during the GitHub Actions build.</p>p
+{% endif %}
