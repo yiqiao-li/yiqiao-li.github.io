@@ -24,7 +24,7 @@ current_members:
       content: all_members.md
       section: "## Bo Shang (Postdoctoral Researcher)"
       image_circular: false
-  
+
   graduatestudents:
     - align: left
       name: Faed Arnob
@@ -42,7 +42,7 @@ current_members:
       content: all_members.md
       section: "## Wen Jie Long (Undergraduate Student)"
       image_circular: false
-  
+
   highschoolstudents:
     - align: left
       name: Elizabeth Chen
@@ -51,7 +51,7 @@ current_members:
       content: all_members.md
       section: "## Elizabeth Chen (High School Student)"
       image_circular: false
-    
+
     - align: left
       name: Philip Jow
       role: High School Student
@@ -63,7 +63,7 @@ current_members:
 past_members:
   - name: Taylor Caine
     affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, City College of New York
-  - name: Nyklos Willson 
+  - name: Nyklos Willson
     affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, City College of New York
   - name: Kevin Villon
     affiliation: Undergrad Student, TRB Minority Student Fellowship,Department of Civil Engineering, City College of New York

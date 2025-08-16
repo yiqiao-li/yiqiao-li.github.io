@@ -1,9 +1,9 @@
---- 
-layout: page 
-permalink: /publications/ 
-title: Publications 
-description: Selected Publications. 
-nav: true 
+---
+layout: page
+permalink: /publications/
+title: Publications
+description: Selected Publications.
+nav: true
 nav_order: 4
 ---
 

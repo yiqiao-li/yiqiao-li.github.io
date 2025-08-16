@@ -20,4 +20,3 @@ Description: This project focuses on developing a robust and versatile traffic n
   <div class="col-sm-8 mt-3 mt-md-0">
     {% include figure.liquid path="assets/img/northern_manh.jpg" title="Large-scale Simulation" class="img-fluid rounded z-depth-1" %}
   </div>
-

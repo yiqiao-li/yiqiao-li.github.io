@@ -4,7 +4,7 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {%- if entry.journal -%}
-        {%- assign venue_key = nil -%}
+        {%- assign venue_key = null -%}
         {%- if site.data.venues[entry.journal] -%}
           {%- assign venue_key = entry.journal -%}
         {%- else -%}

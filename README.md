@@ -32,16 +32,19 @@ If port 8080 is busy, edit `docker-compose.yml` and change `8080:8080` to `8081:
 ## Common Edits
 
 ### People (Members)
+
 - File: `/_pages/profiles.md`
 - Add members under `principal_investigator`, `current_members`, or `past_members`.
 - Place photos in `assets/img/` and reference by filename (e.g., `philip.jpg`).
 - Each card can link to a detailed bio in `/_pages/all_members.md` via the `section` field (e.g., "## Philip Jow (High School Student)").
 
 ### Publications
+
 - File: `/_bibliography/papers.bib`
 - Configure display in `/_pages/publications.md` and `_config.yml` (Jekyll Scholar section).
 
 ### Home Page
+
 - File: `/_pages/about.md`
 - The profile image and text are set in the front matter `profile:` block.
 - Visitor Analytics uses ClustrMaps via `{% include clustrmaps.liquid %}`.
@@ -54,6 +57,7 @@ If port 8080 is busy, edit `docker-compose.yml` and change `8080:8080` to `8081:
 - Replaced a custom Leaflet-based Visitor Analytics map with a ClustrMaps embed.
 
 Where to find the changes:
+
 - Image sizing and home social icon tweaks: `_sass/_base.scss` and `_sass/_layout.scss`.
 - People page layout and image wrappers: `_layouts/profiles.liquid` and `_sass/_base.scss`.
 - ClustrMaps include: `/_includes/clustrmaps.liquid`.
@@ -62,20 +66,26 @@ Where to find the changes:
 
 1. Get your embed from ClustrMaps and copy the `d` parameter.
 2. Set it in `_config.yml`:
+
 ```yml
 clustrmaps:
   d: lEvpq6tbOZ1Vp7wbIrn4foDRNxUuFL3VC6436hJYAU8
   cl: ffffff
   w: a
 ```
+
 3. Include on a page (already done on Home):
+
 ```liquid
 {% include clustrmaps.liquid %}
 ```
+
 To force a specific ID on a page (useful in dev), pass it directly:
+
 ```liquid
 {% include clustrmaps.liquid d="YOUR_ID" cl="ffffff" w="a" %}
 ```
+
 Note: Some third‑party widgets avoid rendering on `localhost`. The include shows a helpful message in local dev; verify on the live site or after deploying.
 
 ## Deployment
@@ -83,6 +93,7 @@ Note: Some third‑party widgets avoid rendering on `localhost`. The include sho
 This site is deployed via GitHub Pages from the `main` branch.
 
 Typical flow:
+
 - Edit content locally
 - Preview with Docker at `http://localhost:8080`
 - Commit and push to GitHub (`main`)
@@ -92,9 +103,11 @@ GitHub Actions/Pages will build and publish automatically.
 ## Troubleshooting
 
 - Config changes to `_config.yml` require restarting the local server:
+
 ```bash
 docker compose restart jekyll
 ```
+
 - Port conflict on 8080: adjust `docker-compose.yml` as above.
 - Images not appearing: confirm files exist under `assets/img/` and paths are correct.
 

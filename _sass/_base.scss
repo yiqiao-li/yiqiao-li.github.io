@@ -211,12 +211,12 @@ ul.task-list input[type="checkbox"] {
       line-height: 1.4;
     }
   }
-  
+
   // Reduce image size for people page
   .profile-image-wrapper {
     max-width: 96px;
     margin: 0 auto;
-    
+
     img {
       max-width: 100%;
       height: auto;
@@ -307,7 +307,7 @@ ul.task-list input[type="checkbox"] {
   .profile {
     margin-bottom: 2rem;
   }
-  
+
   .clearfix {
     margin-top: 1rem;
   }
@@ -386,11 +386,11 @@ ul.task-list input[type="checkbox"] {
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--global-divider-color);
   background: transparent;
-  
+
   // Ensure profile images are properly sized
   .profile {
     text-align: center;
-    
+
     .profile-image-wrapper {
       display: inline-block;
       margin-bottom: 1rem;
@@ -432,7 +432,7 @@ ul.task-list input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  
+
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: flex-start;
@@ -480,7 +480,7 @@ ul.task-list input[type="checkbox"] {
   width: 100%;
   max-width: none;
   position: relative;
-  
+
   h3 {
     color: var(--global-theme-color);
     font-size: 1.5rem;
@@ -493,7 +493,7 @@ ul.task-list input[type="checkbox"] {
 .visitor-map {
   width: 100%;
   max-width: none;
-  
+
   #map {
     width: 100% !important;
     max-width: none !important;
@@ -551,20 +551,20 @@ ul.task-list input[type="checkbox"] {
   .visitor-analytics {
     padding: 1rem;
     margin-top: 2rem;
-    
+
     h3 {
       font-size: 1.3rem;
     }
   }
-  
+
   .visitor-counter {
     padding: 1rem;
-    
+
     .counter-display {
       #visitor-count {
         font-size: 2.5rem;
       }
-      
+
       .counter-label {
         font-size: 1rem;
       }
