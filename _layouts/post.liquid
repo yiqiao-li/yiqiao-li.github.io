@@ -77,7 +77,7 @@ layout: default
     {% include citation.liquid %}
   {% endif %}
 
-  {% if page.related_publications %}
+  {% if page.related_publications and site.plugins contains 'jekyll-scholar' %}
     <h2>References</h2>
     <div class="publications">
       {% bibliography --group_by none --cited_in_order %}
