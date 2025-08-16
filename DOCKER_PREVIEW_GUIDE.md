@@ -111,13 +111,12 @@ docker-compose up --build
 3. Restart Docker Desktop
 4. Run `docker system prune` to clean up
 
-#### Website Not Loading / Map not visible
+#### Website Not Loading
 **Problem**: Browser shows connection error
 **Solutions**:
 1. Wait 30-60 seconds for Jekyll build to complete
 2. Check container logs: `docker-compose logs jekyll`
 3. Verify container is running: `docker-compose ps`
-4. If the visitor map does not render, disable ad/script blockers and ensure internet access. The map is powered by ClustrMaps (loads from `https://clustrmaps.com`).
 
 #### File Changes Not Reflecting
 **Problem**: Updates not showing in browser
