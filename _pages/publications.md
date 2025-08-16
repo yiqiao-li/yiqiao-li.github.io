@@ -14,6 +14,7 @@ nav_order: 4
 {% include bib_search.liquid %}
 
 {% if site.plugins contains 'jekyll-scholar' %}
+
 <div class="publications">
 {% bibliography %}
 </div>
