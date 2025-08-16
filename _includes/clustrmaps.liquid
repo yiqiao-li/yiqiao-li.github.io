@@ -21,6 +21,7 @@
           var s = document.createElement('script');
           s.type = 'text/javascript';
           s.async = true;
+          s.id = 'clustrmaps';
           s.src = 'https://www.clustrmaps.com/map_v2.js?d={{ d_param | escape }}&cl={{ cl_param }}&w={{ w_param }}';
           container.appendChild(s);
         } catch (e) {
