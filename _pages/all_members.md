@@ -38,7 +38,6 @@ Chaw Nandar is an undergraduate student in Civil Engineering at City College of 
 John Okoh is an undergraduate student in Civil Engineering at City College of New York. His research focuses on [research area to be added]. Outside of research, he enjoys [interests to be added].
 </p>
 
----
 
 ---
 
@@ -59,7 +58,7 @@ Kevin Villon was a graduate student in Civil Engineering at City College of New 
 ## Valentina Samboni (Past Member)
 <p align='justify'>
 
-Valentina Samboni was a graduate student in Civil Engineering at City College of New York. Her research focused on sustainable transportation systems and urban planning. She has since graduated and is working in the field of urban development.
+Valentina Samboni was a graduate student in DS at City College of New York. Her research focused on sustainable transportation systems and urban planning. She has since graduated and is working in the field of urban development.
 </p>
 
 ---
@@ -74,4 +73,11 @@ Blanche Penafiel was an undergraduate student in Civil Engineering at City Colle
 ## Elizabeth Chen (High School Student)
 <p align='justify'>
 Elizabeth Chen is a Senior at Stuyvesant High School, interested in the applications of AI to improve urban environments and strengthen communities. Outside of academics, she enjoys drawing, sewing, and exploring new restaurants with her friends.
+</p>
+
+---
+
+## Philip Jow (High School Student)
+<p align='justify'>
+Philip Jow is a Junior at The Bronx High School of Science, currently focusing on the integration of artificial intelligence, data science, and civil engineering, in order to improve transportation infrastructure in New York City. He is a member of his school’s robotics team, and his other interests include hiking, camping, and using CAD softwares.
 </p>

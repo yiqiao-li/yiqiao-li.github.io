@@ -37,14 +37,6 @@ Profile
    width: 100%;
  }
 }
-.profile {
-  img {
-    width: 200px;       /* Set to a fixed width */
-    height: 200px;      /* Set to a fixed height */
-    object-fit: cover;  /* Ensures the image covers the space and doesn't stretch */
-    border-radius: 50%; /* Optional: makes the image circular */
-  }
-}
 
 // TODO: redefine content layout.
 

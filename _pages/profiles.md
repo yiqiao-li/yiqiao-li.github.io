@@ -51,6 +51,14 @@ current_members:
       content: all_members.md
       section: "## Elizabeth Chen (High School Student)"
       image_circular: false
+    
+    - align: left
+      name: Philip Jow
+      role: High School Student
+      image: philip.jpg
+      content: all_members.md
+      section: "## Philip Jow (High School Student)"
+      image_circular: false
 
 past_members:
   - name: Taylor Caine
@@ -60,7 +68,9 @@ past_members:
   - name: Kevin Villon
     affiliation: Undergrad Student, TRB Minority Student Fellowship,Department of Civil Engineering, City College of New York
   - name: Valentina Samboni
-    affiliation: Data Science and Engineering Program, City College of New York
+    affiliation: Master Student, Data Science and Engineering Program, City College of New York
   - name: Blanche Penafiel
-    affiliation: Data Science and Engineering Program, City College of New York
+    affiliation: Master Student, Data Science and Engineering Program, City College of New York
+  - name: John Okoh
+    affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, City College of New York
 ---

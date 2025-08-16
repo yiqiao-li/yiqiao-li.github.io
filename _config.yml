@@ -394,6 +394,16 @@ enable_progressbar: true # enables a horizontal progress bar linked to the verti
 enable_video_embedding: false # enables video embedding for bibtex entries. If false, the button opens the video link in a new window.
 
 # -----------------------------------------------------------------------------
+# ClustrMaps
+# -----------------------------------------------------------------------------
+# Obtain your embed code at clustrmaps.com and copy the "d" parameter value.
+# Example embed: //www.clustrmaps.com/map_v2.js?d=YOUR_ID&cl=ffffff&w=a
+clustrmaps:
+  d: lEvpq6tbOZ1Vp7wbIrn4foDRNxUuFL3VC6436hJYAU8
+  cl: ffffff
+  w: a
+
+# -----------------------------------------------------------------------------
 # Library versions
 # -----------------------------------------------------------------------------
 

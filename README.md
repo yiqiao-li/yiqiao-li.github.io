@@ -1,3 +1,127 @@
+# AI & Mobility Research Lab Website (CCNY)
+
+This repository contains the source for the AI & Mobility Research Lab website, built with Jekyll on top of the al‑folio theme.
+
+- Live site: `https://yiqiao-li.github.io`
+- Local preview: Docker-based Jekyll dev server at `http://localhost:8080`
+
+## Quick Start (Docker)
+
+Prerequisites: Docker Desktop installed and running
+
+```bash
+# from repo root
+docker compose up -d
+# open http://localhost:8080
+
+# stop
+docker compose down
+```
+
+If port 8080 is busy, edit `docker-compose.yml` and change `8080:8080` to `8081:8080`, then visit `http://localhost:8081`.
+
+## Project Structure
+
+- `_pages/` – content pages (e.g., `about.md` is Home, `profiles.md` is People)
+- `_layouts/` – page layouts (e.g., `about.liquid`, `profiles.liquid`)
+- `_includes/` – reusable includes (e.g., `figure.liquid`, `clustrmaps.liquid`)
+- `_sass/` – SCSS styles (customizations live here)
+- `assets/` – images, css, js, pdfs, etc.
+- `_bibliography/` – BibTeX files rendered by Jekyll Scholar
+
+## Common Edits
+
+### People (Members)
+- File: `/_pages/profiles.md`
+- Add members under `principal_investigator`, `current_members`, or `past_members`.
+- Place photos in `assets/img/` and reference by filename (e.g., `philip.jpg`).
+- Each card can link to a detailed bio in `/_pages/all_members.md` via the `section` field (e.g., "## Philip Jow (High School Student)").
+
+### Publications
+- File: `/_bibliography/papers.bib`
+- Configure display in `/_pages/publications.md` and `_config.yml` (Jekyll Scholar section).
+
+### Home Page
+- File: `/_pages/about.md`
+- The profile image and text are set in the front matter `profile:` block.
+- Visitor Analytics uses ClustrMaps via `{% include clustrmaps.liquid %}`.
+
+## Current Customizations
+
+- People page profile photos are uniformly sized at 150×150 px.
+- Home page profile image wrapper set to 150 px.
+- Home page social icon size under the profile photo increased (currently ~1.8rem).
+- Replaced a custom Leaflet-based Visitor Analytics map with a ClustrMaps embed.
+
+Where to find the changes:
+- Image sizing and home social icon tweaks: `_sass/_base.scss` and `_sass/_layout.scss`.
+- People page layout and image wrappers: `_layouts/profiles.liquid` and `_sass/_base.scss`.
+- ClustrMaps include: `/_includes/clustrmaps.liquid`.
+
+## ClustrMaps (Visitor Analytics)
+
+1. Get your embed from ClustrMaps and copy the `d` parameter.
+2. Set it in `_config.yml`:
+```yml
+clustrmaps:
+  d: lEvpq6tbOZ1Vp7wbIrn4foDRNxUuFL3VC6436hJYAU8
+  cl: ffffff
+  w: a
+```
+3. Include on a page (already done on Home):
+```liquid
+{% include clustrmaps.liquid %}
+```
+To force a specific ID on a page (useful in dev), pass it directly:
+```liquid
+{% include clustrmaps.liquid d="YOUR_ID" cl="ffffff" w="a" %}
+```
+Note: Some third‑party widgets avoid rendering on `localhost`. The include shows a helpful message in local dev; verify on the live site or after deploying.
+
+## Deployment
+
+This site is deployed via GitHub Pages from the `main` branch.
+
+Typical flow:
+- Edit content locally
+- Preview with Docker at `http://localhost:8080`
+- Commit and push to GitHub (`main`)
+
+GitHub Actions/Pages will build and publish automatically.
+
+## Troubleshooting
+
+- Config changes to `_config.yml` require restarting the local server:
+```bash
+docker compose restart jekyll
+```
+- Port conflict on 8080: adjust `docker-compose.yml` as above.
+- Images not appearing: confirm files exist under `assets/img/` and paths are correct.
+
+## Credits & References
+
+This website builds on al‑folio and several open‑source tools. We gratefully acknowledge their work.
+
+- Theme: [al‑folio](https://github.com/alshedivat/al-folio) (MIT License)
+- Static site generator: [Jekyll](https://jekyllrb.com/)
+- Styling/layout: [Bootstrap](https://getbootstrap.com/), [MDB](https://mdbootstrap.com/) (via theme), SCSS
+- Icons: [Font Awesome](https://fontawesome.com/), [Tabler Icons](https://tabler-icons.io/)
+- Search/UX/JS utilities (via theme):
+  - Charting/graphics: [Chart.js](https://www.chartjs.org/), [D3](https://d3js.org/), [Vega](https://vega.github.io/), [Vega‑Lite](https://vega.github.io/vega-lite/)
+  - Diagrams: [Mermaid](https://mermaid.js.org/)
+  - Math: [MathJax](https://www.mathjax.org/)
+  - Code highlighting: [highlight.js](https://highlightjs.org/)
+  - Images/layout: [Masonry](https://masonry.desandro.com/), [medium‑zoom](https://github.com/francoischalifour/medium-zoom), [Lightbox2](https://lokeshdhakar.com/projects/lightbox2/), [PhotoSwipe](https://photoswipe.com/)
+  - Maps (available in theme): [Leaflet](https://leafletjs.com/)
+  - Misc: [Swiper](https://swiperjs.com/), [Venobox](http://veno.es/venobox/), [Diff2Html](https://diff2html.xyz/)
+- BibTeX rendering: [Jekyll Scholar](https://github.com/inukshuk/jekyll-scholar)
+- Responsive images: [jekyll‑imagemagick](https://github.com/robwierzbowski/jekyll-imagemagick)
+- Visitor analytics widget: [ClustrMaps](https://clustrmaps.com/)
+
+Additional third‑party libraries are listed in `_config.yml` under `third_party_libraries` with versions and CDNs, as configured by al‑folio.
+
+---
+
 # al-folio
 
 <div align="center">
@@ -221,6 +345,18 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
 
 ## Table Of Contents
 
+- [AI \& Mobility Research Lab Website (CCNY)](#ai--mobility-research-lab-website-ccny)
+  - [Quick Start (Docker)](#quick-start-docker)
+  - [Project Structure](#project-structure)
+  - [Common Edits](#common-edits)
+    - [People (Members)](#people-members)
+    - [Publications](#publications)
+    - [Home Page](#home-page)
+  - [Current Customizations](#current-customizations)
+  - [ClustrMaps (Visitor Analytics)](#clustrmaps-visitor-analytics)
+  - [Deployment](#deployment)
+  - [Troubleshooting](#troubleshooting)
+  - [Credits \& References](#credits--references)
 - [al-folio](#al-folio)
   - [User community](#user-community)
   - [Lighthouse PageSpeed Insights](#lighthouse-pagespeed-insights)
@@ -234,7 +370,7 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
     - [Light/Dark Mode](#lightdark-mode)
     - [CV](#cv)
     - [People](#people)
-    - [Publications](#publications)
+    - [Publications](#publications-1)
     - [Collections](#collections)
     - [Layouts](#layouts)
       - [The iconic style of Distill](#the-iconic-style-of-distill)
