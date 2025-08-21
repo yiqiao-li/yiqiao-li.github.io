@@ -9,7 +9,7 @@ nav_order: 3
 principal_investigator:
   - align: left
     name: Yiqiao Li
-    role: Principal Investigator
+    role: Assistant Professor
     image: prof_pic.jpg
     content: all_members.md
     section: "## Yiqiao Li"
@@ -19,7 +19,7 @@ current_members:
   postdoctoralresearcher:
     - align: left
       name: Bo Shang
-      role: Postdoctoral Researcher
+      role: Research Scientist
       image: bo.jpg
       content: all_members.md
       section: "## Bo Shang (Postdoctoral Researcher)"
@@ -28,7 +28,7 @@ current_members:
   graduatestudents:
     - align: left
       name: Faed Arnob
-      role: Graduate Student
+      role: PhD Student
       image: faed.jpg
       content: all_members.md
       section: "## Faed Arnob (Graduate Student)"
@@ -37,7 +37,7 @@ current_members:
   undergraduatestudents:
     - align: left
       name: Wen Jie Long
-      role: Undergraduate Student
+      role: Undergrad Researcher
       image: wenjie.png
       content: all_members.md
       section: "## Wen Jie Long (Undergraduate Student)"
@@ -46,7 +46,7 @@ current_members:
   highschoolstudents:
     - align: left
       name: Elizabeth Chen
-      role: High School Student
+      role: High School Researcher
       image: elizabeth.png
       content: all_members.md
       section: "## Elizabeth Chen (High School Student)"
@@ -54,23 +54,39 @@ current_members:
 
     - align: left
       name: Philip Jow
-      role: High School Student
+      role: High School Researcher
       image: philip.jpg
       content: all_members.md
       section: "## Philip Jow (High School Student)"
       image_circular: false
 
 past_members:
-  - name: Taylor Caine
-    affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, City College of New York
-  - name: Nyklos Willson
-    affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, City College of New York
-  - name: Kevin Villon
-    affiliation: Undergrad Student, TRB Minority Student Fellowship,Department of Civil Engineering, City College of New York
-  - name: Valentina Samboni
-    affiliation: Master Student, Data Science and Engineering Program, City College of New York
-  - name: Blanche Penafiel
-    affiliation: Master Student, Data Science and Engineering Program, City College of New York
   - name: John Okoh
-    affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, City College of New York
+    affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, CCNY
+    start: 2025/6
+    end: 2025/8
+  - name: Taylor Caine
+    affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, CCNY
+    start: 2025/3
+    end: 2025/8
+  - name: Nyklos Willson
+    affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, CCNY
+    start: 2025/6
+    end: 2025/8
+  - name: Olivia Abeler Ballard
+    affiliation: High School Student, Calhoun Senior Work, The Calhoun School
+    start: 2025/4
+    end: 2025/6
+  - name: Kevin Villon
+    affiliation: Undergrad Student, TRB Minority Student Fellowship,Department of Civil Engineering, CCNY
+    start: 2024/6
+    end: 2025/6
+  - name: Valentina Samboni
+    affiliation: Master Student, Data Science and Engineering Program, CCNY
+    start: 2024/9
+    end: 2024/12
+  - name: Blanche Penafiel
+    affiliation: Master Student, Data Science and Engineering Program, CCNY
+    start: 2024/9
+    end: 2024/12
 ---

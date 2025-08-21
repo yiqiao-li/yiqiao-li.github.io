@@ -28,6 +28,20 @@
   color: "#0066CC"
   abbr: IEEE OJ-ITS
 
+"Procedia Computer Science":
+  url: https://www.sciencedirect.com/journal/procedia-computer-science
+  abbr: Procedia CS
+
+"IEEE International Conference on Intelligent Transportation Systems":
+  url: https://ieeexplore.ieee.org/xpl/conhome/1000090/all-proceedings
+  color: "#0066CC"
+  abbr: IEEE ITSC
+
+"IEEE International Conference on Intelligent Transportation Systems (ITSC)":
+  url: https://ieeexplore.ieee.org/xpl/conhome/1000090/all-proceedings
+  color: "#0066CC"
+  abbr: IEEE ITSC
+
 "arXiv preprint":
   url: https://arxiv.org/
   color: "#B31B1B"
@@ -37,6 +51,10 @@
   url: https://www.ssrn.com/
   color: "#FF6600"
   abbr: SSRN
+
+"Research Square Preprint":
+  url: https://www.researchsquare.com/
+  abbr: RSQ
 
 "Springer Tracts on Transportation and Traffic":
   url: https://link.springer.com/bookseries/11058

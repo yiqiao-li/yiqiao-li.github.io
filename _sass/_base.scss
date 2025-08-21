@@ -387,6 +387,14 @@ ul.task-list input[type="checkbox"] {
   border-bottom: 1px solid var(--global-divider-color);
   background: transparent;
 
+  &.people-card {
+    background: var(--global-card-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
   // Ensure profile images are properly sized
   .profile {
     text-align: center;
@@ -400,8 +408,8 @@ ul.task-list input[type="checkbox"] {
 
 // People page: reduce profile image size
 .members-section .profile-image-wrapper {
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
   max-width: none; /* enforce uniform square size */
 }
 
@@ -415,7 +423,7 @@ ul.task-list input[type="checkbox"] {
 
 .members-section .profile-name {
   margin-top: 0.4rem;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.95rem; /* fine-tuned */
   color: var(--global-text-color);
   text-align: center;
@@ -1085,6 +1093,11 @@ footer.sticky-bottom {
             &:hover {
               text-decoration: none;
             }
+          }
+
+          // Ensure non-linked venue labels (rendered in a div) are white too
+          div {
+            color: $white-color;
           }
         }
 

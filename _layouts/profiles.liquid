@@ -17,7 +17,7 @@ layout: page
       <h2 class="section-title" id="pi">Principal Investigator</h2>
       <div class="members-section">
         {% for profile in page.principal_investigator %}
-          <div class="member-profile">
+          <div class="member-profile people-card">
             <div class="profile-container">
               <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
                 {% if profile.image %}
@@ -32,6 +32,9 @@ layout: page
                     {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                     {% if profile.name %}
                       <div class="profile-name">{{ profile.name }}</div>
+                    {% endif %}
+                    {% if profile.role %}
+                      <div class="profile-role">{{ profile.role }}</div>
                     {% endif %}
                   </div>
                 {% endif %}
@@ -76,7 +79,7 @@ layout: page
         <h3 class="subsection-title" id="postdoc">Postdoctoral Researcher</h3>
         <div class="members-section">
           {% for profile in page.current_members.postdoctoralresearcher %}
-            <div class="member-profile">
+            <div class="member-profile people-card">
               <div class="profile-container">
                 <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
                   {% if profile.image %}
@@ -91,6 +94,9 @@ layout: page
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                       {% if profile.name %}
                         <div class="profile-name">{{ profile.name }}</div>
+                      {% endif %}
+                      {% if profile.role %}
+                        <div class="profile-role">{{ profile.role }}</div>
                       {% endif %}
                     </div>
                   {% endif %}
@@ -131,7 +137,7 @@ layout: page
         <h3 class="subsection-title" id="grad">Graduate Students</h3>
         <div class="members-section">
           {% for profile in page.current_members.graduatestudents %}
-            <div class="member-profile">
+            <div class="member-profile people-card">
               <div class="profile-container">
                 <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
                   {% if profile.image %}
@@ -146,6 +152,9 @@ layout: page
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                       {% if profile.name %}
                         <div class="profile-name">{{ profile.name }}</div>
+                      {% endif %}
+                      {% if profile.role %}
+                        <div class="profile-role">{{ profile.role }}</div>
                       {% endif %}
                     </div>
                   {% endif %}
@@ -186,7 +195,7 @@ layout: page
         <h3 class="subsection-title" id="undergrad">Undergraduate Students</h3>
         <div class="members-section">
           {% for profile in page.current_members.undergraduatestudents %}
-            <div class="member-profile">
+            <div class="member-profile people-card">
               <div class="profile-container">
                 <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
                   {% if profile.image %}
@@ -201,6 +210,9 @@ layout: page
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                       {% if profile.name %}
                         <div class="profile-name">{{ profile.name }}</div>
+                      {% endif %}
+                      {% if profile.role %}
+                        <div class="profile-role">{{ profile.role }}</div>
                       {% endif %}
                     </div>
                   {% endif %}
@@ -241,7 +253,7 @@ layout: page
         <h3 class="subsection-title" id="highschool">High School Students</h3>
         <div class="members-section">
           {% for profile in page.current_members.highschoolstudents %}
-            <div class="member-profile">
+            <div class="member-profile people-card">
               <div class="profile-container">
                 <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
                   {% if profile.image %}
@@ -256,6 +268,9 @@ layout: page
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                       {% if profile.name %}
                         <div class="profile-name">{{ profile.name }}</div>
+                      {% endif %}
+                      {% if profile.role %}
+                        <div class="profile-role">{{ profile.role }}</div>
                       {% endif %}
                     </div>
                   {% endif %}
@@ -295,10 +310,33 @@ layout: page
     <!-- Past Members Section -->
     {% if page.past_members %}
       <h2 class="section-title" id="past">Past Members</h2>
+      {% assign past_with_end = page.past_members | where_exp: 'm', 'm.end' %}
+      {% assign past_without_end = page.past_members | where_exp: 'm', 'm.end == nil' %}
+      {% assign past_sorted = past_with_end | sort: 'end' | reverse %}
       <ul>
-        {% for member in page.past_members %}
+        {% for member in past_sorted %}
           <li>
             {{ member.name -}}
+            {% if member.start or member.end %}
+              (
+              <span class="member-duration">
+                {% if member.start %}{{ member.start }}{% endif %}
+                {% if member.start and member.end %}&ndash;{% endif %}
+                {% if member.end %}{{ member.end }}{% endif %}
+              </span>
+              )
+            {% endif %}
+            {%- if member.affiliation %}
+              — <em>{{ member.affiliation }}</em>
+            {%- endif %}
+          </li>
+        {% endfor %}
+        {% for member in past_without_end %}
+          <li>
+            {{ member.name -}}
+            {% if member.start %}
+              ( <span class="member-duration">{{ member.start }}</span> )
+            {% endif %}
             {%- if member.affiliation %}
               — <em>{{ member.affiliation }}</em>
             {%- endif %}
