@@ -1,7 +1,11 @@
 ---
-layout: page
 title: Improved California Truck Traffic Census Reporting and Spatial Activity Measurement
-description: Sponsor by Road Repair and Accountability Act of 2017 (SB1) and California Air Resources Board
+sponsor: Road Repair and Accountability Act of 2017 (SB1) and California Air Resources Board
+description: >
+  Bagging deep neural network for FHWA vehicle classification using inductive loop data from TAMS sites.
+img: assets/img/truck_census.png
+year: 2019-2020
+role: Researcher
 importance: 1
 category: Past
 related_publications: true

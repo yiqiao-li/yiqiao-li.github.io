@@ -1,7 +1,11 @@
 ---
-layout: page
-title: Analyzing Cross-Border Truck Activity to Inform California’s Transition to Zero-Emission Trucks
-description: Sponsor by Resilient and Innovative Mobility Initiative (RIMI)
+title: Analyzing Cross-Border Truck Activity to Inform California's Transition to Zero-Emission Trucks
+sponsor: Resilient and Innovative Mobility Initiative (RIMI)
+description: >
+  Multicampus effort collecting license plate reader and GPS data on trucks crossing the California-Mexico border for ZEV transition planning.
+img: assets/img/cross_border_truck.png
+year: 2023-2024
+role: Researcher
 importance: 3
 category: Past
 ---

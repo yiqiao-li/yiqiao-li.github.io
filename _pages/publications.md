@@ -4,7 +4,7 @@ permalink: /publications/
 title: Publications
 description: Selected Publications.
 nav: true
-nav_order: 4
+nav_order: 3
 ---
 
 <!-- _pages/publications.md -->
@@ -19,5 +19,5 @@ nav_order: 4
 {% bibliography %}
 </div>
 {% else %}
-<p>Publications listing requires <code>jekyll-scholar</code>. The site will include it during the GitHub Actions build.</p>p
+<p>Publications listing requires <code>jekyll-scholar</code>. The site will include it during the GitHub Actions build.</p>
 {% endif %}

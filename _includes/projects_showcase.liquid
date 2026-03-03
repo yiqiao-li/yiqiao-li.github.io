@@ -1,0 +1,31 @@
+<div class="col-12 col-lg-6 col-xl-4 mb-4">
+  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="project-card-link">
+    <div class="card project-showcase-card h-100 hoverable">
+      <div class="project-card-image-wrapper">
+        {% if project.img %}
+          <img src="{{ project.img | relative_url }}" alt="{{ project.title }}" class="project-card-img" loading="lazy" width="100%" height="auto">
+        {% else %}
+          <div class="project-card-placeholder">
+            <i class="fas fa-flask"></i>
+            <span>Research</span>
+          </div>
+        {% endif %}
+        <div class="project-card-overlay"></div>
+        <div class="project-card-badges">
+          {% if project.category %}<span class="badge badge-category">{{ project.category }}</span>{% endif %}
+        </div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title project-card-title">{{ project.title }}</h3>
+        <div class="project-card-meta">
+          {% if project.sponsor %}<div class="project-card-meta-row"><span class="project-card-meta-label">Sponsor:</span> {{ project.sponsor }}</div>{% endif %}
+          {% if project.role %}<div class="project-card-meta-row"><span class="project-card-meta-label">Role:</span> {{ project.role }}</div>{% endif %}
+          {% if project.year %}<div class="project-card-meta-row"><span class="project-card-meta-label">Year:</span> {{ project.year }}</div>{% endif %}
+        </div>
+        {% assign desc_clean = project.description | strip_html | truncate: 160 %}
+        <p class="project-card-description">{{ desc_clean }}</p>
+        <span class="project-card-link-text">View project <i class="fas fa-arrow-right fa-sm"></i></span>
+      </div>
+    </div>
+  </a>
+</div>

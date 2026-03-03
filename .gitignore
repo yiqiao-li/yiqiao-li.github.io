@@ -11,3 +11,24 @@ assets/libs/
 node_modules/
 vendor
 .idea
+blocked_ips*.txt
+
+# IDE / editor
+.cursor/
+.vscode/
+
+# Logs and temp
+*.log
+*.tmp
+*.temp
+
+# Environment / secrets
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Internal planning (optional - remove if you want to track)
+# REDESIGN_RECOMMENDATIONS.md

@@ -1,11 +1,11 @@
 ---
-layout: page
 title: Investigation of Emerging Sensing and AI/ML Technologies to Enhance the Safety of Vulnerable Roadway Users at Signalized Intersection
-description: |
-  Sponsor: US DOT – UTC TBD National Center
-  Role: PI
-  Year: 2024-2026
-#img: assets/img/lidar_project.png
+sponsor: US DOT – UTC TBD National Center
+description: >
+  AI/ML-empowered data collection and analysis by fusing LiDAR and PTZ cameras to identify and analyze pedestrians, cyclists, and vehicles for intersection safety.
+img: assets/img/vru_safety.png
+year: 2024-2026
+role: PI
 importance: 2
 category: Current
 giscus_comments: false

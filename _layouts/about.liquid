@@ -2,8 +2,8 @@
 layout: default
 ---
 <div class="post home-root">
-  <header class="post-header">
-    <h1 class="post-title">
+  <header class="post-header home-hero">
+    <h1 class="post-title home-title">
       {% if site.title == 'blank' %}
         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
         {{ site.last_name }}
@@ -11,7 +11,15 @@ layout: default
         {{ site.title }}
       {% endif %}
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    {% if page.subtitle %}
+    <p class="home-tagline">{{ page.subtitle }}</p>
+{% endif %}
+    <div class="home-pillars">
+      <a href="{{ '/projects/#Current' | relative_url }}" class="home-pillar"><i class="fas fa-flask"></i> Research</a>
+      <a href="{{ '/profiles/' | relative_url }}" class="home-pillar"><i class="fas fa-users"></i> People</a>
+      <a href="{{ '/publications/' | relative_url }}" class="home-pillar"><i class="fas fa-file-alt"></i> Publications</a>
+      <a href="{{ '/opening/' | relative_url }}" class="home-pillar"><i class="fas fa-briefcase"></i> Join Us</a>
+    </div>
   </header>
 
   <article>
@@ -37,6 +45,12 @@ layout: default
           <div class="home-social">
             <div class="contact-icons small-icons">{% include social.liquid %}</div>
           </div>
+          {% if page.profile.logos %}
+          <div class="profile-logos mt-3">
+            <a href="https://www.ccny.cuny.edu" target="_blank" rel="noopener" title="City College of New York"><img src="{{ '/assets/img/ccny_logo.png' | relative_url }}" alt="CCNY" class="profile-logo"></a>
+            <a href="https://www.cuny.edu" target="_blank" rel="noopener" title="City University of New York"><img src="{{ '/assets/img/cuny_logo.png' | relative_url }}" alt="CUNY" class="profile-logo"></a>
+          </div>
+          {% endif %}
         {% endif %}
       </div>
     {% endif %}
@@ -67,13 +81,8 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
-    <!-- Social -->
     {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
+      <div class="contact-note">{{ site.contact_note }}</div>
     {% endif %}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}

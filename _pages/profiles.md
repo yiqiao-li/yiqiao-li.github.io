@@ -4,7 +4,7 @@ permalink: /people/
 title: People
 description: Group Members
 nav: true
-nav_order: 3
+nav_order: 2
 
 principal_investigator:
   - align: left
@@ -45,14 +45,6 @@ current_members:
 
   highschoolstudents:
     - align: left
-      name: Elizabeth Chen
-      role: High School Researcher
-      image: elizabeth.png
-      content: all_members.md
-      section: "## Elizabeth Chen (High School Student)"
-      image_circular: false
-
-    - align: left
       name: Philip Jow
       role: High School Researcher
       image: philip.jpg
@@ -61,6 +53,14 @@ current_members:
       image_circular: false
 
 past_members:
+  - name: Matthew Grafals
+    affiliation: Master Student, Data Science and Engineering Program, CCNY
+    start: 2025/9
+    end: 2025/12
+  - name: Elizabeth Chen
+    affiliation: High School Student, Stuyvesant High School
+    start: 2025/4
+    end: 2025/6
   - name: John Okoh
     affiliation: Undergrad Student, NSF LSAMP Fellow, Department of Civil Engineering, CCNY
     start: 2025/6

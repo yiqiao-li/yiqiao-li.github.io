@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: AI & Mobility Research Lab # the website title (if blank, full name will be used instead)
+title: AIMOB # the website title (if blank, full name will be used instead)
 first_name: Yiqiao
 middle_name:
 last_name: Li
@@ -14,9 +14,9 @@ footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: AI, transportation, mobility, CCNY, civil engineering, traffic monitoring, LiDAR, machine learning
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: 🚚 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)⚛️
+icon: lab_logo_truck.png # favicon (image name in /assets/img/)
 
 url: https://yiqiao-li.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -81,7 +81,7 @@ openpanel_analytics: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
 google_site_verification: # your google-site-verification ID (Google Search Console)
-bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
+bing_site_verification: # your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
 # Blog
@@ -192,6 +192,9 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - _projects/TEMPLATE.md
+  - _projects/README.md
+  - assets/jupyter/
 keep_files:
   - CNAME
   - .nojekyll
@@ -222,6 +225,13 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: "_projects"
+      type: "projects"
+    values:
+      layout: project
+      related_publications: false
+      giscus_comments: false
 
 sass:
   style: compressed
@@ -265,8 +275,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Li]
+  first_name: [Yiqiao]
 
   style: apa
   locale: en

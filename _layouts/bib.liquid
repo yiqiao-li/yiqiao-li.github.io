@@ -3,14 +3,15 @@
 <div class="row">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
-      {%- if entry.journal -%}
+      {%- assign venue_source = entry.journal | default: entry.booktitle -%}
+      {%- if venue_source -%}
         {%- assign venue_key = null -%}
-        {%- if site.data.venues[entry.journal] -%}
-          {%- assign venue_key = entry.journal -%}
+        {%- if site.data.venues[venue_source] -%}
+          {%- assign venue_key = venue_source -%}
         {%- else -%}
           {%- for kv in site.data.venues -%}
             {%- assign venue_name = kv[0] -%}
-            {%- if entry.journal contains venue_name -%}
+            {%- if venue_source contains venue_name -%}
               {%- assign venue_key = venue_name -%}
               {%- break -%}
             {%- endif -%}
@@ -35,7 +36,7 @@
             {% endif %}
           </abbr>
         {% else %}
-          <abbr class="badge rounded w-100">{{ entry.journal }}</abbr>
+          <abbr class="badge rounded w-100">{{ venue_source }}</abbr>
         {% endif %}
       {% endif %}
       {% if entry.preview %}
@@ -209,7 +210,7 @@
         <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
       {% endif %}
       {% if entry.arxiv %}
-        <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
       {% endif %}
       {% if entry.bibtex_show %}
         <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>

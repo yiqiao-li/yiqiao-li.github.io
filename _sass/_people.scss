@@ -1,0 +1,196 @@
+// People page visual improvements
+.people-intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--global-text-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.people-quicklinks {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  font-size: 0.9rem;
+
+  strong {
+    margin-right: 0.5rem;
+    color: var(--global-text-color);
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.9rem;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 2rem;
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    margin-left: 0 !important;
+
+    &:hover {
+      background: var(--global-theme-color);
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: rgba(255, 255, 255, 0.08);
+
+      &:hover {
+        background: var(--global-theme-color);
+      }
+    }
+  }
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--global-theme-color);
+  letter-spacing: -0.02em;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.subsection-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--global-theme-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.members-section {
+  margin-bottom: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.member-profile.people-card {
+  margin-bottom: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  border-radius: 10px;
+  background: var(--global-card-bg-color);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+}
+
+.members-section .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  float: none !important;
+}
+
+.members-section .profile-image-wrapper {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.members-section .profile-info {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.members-section .profile-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.members-section .profile-info .profile-name {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--global-text-color);
+  text-align: center;
+}
+
+.members-section .profile-info .profile-role {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  margin-top: 0.15rem;
+  text-align: center;
+}
+
+.member-profile .clearfix {
+  flex: 1;
+  min-width: 0;
+}
+
+.member-profile .clearfix p {
+  line-height: 1.6;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Past members list
+.past-members-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 0 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .member-duration {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+  }
+}

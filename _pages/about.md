@@ -2,35 +2,40 @@
 layout: about
 title: Home
 permalink: /
+nav: false
+subtitle: Advancing transportation through AI, sensing, and data-driven solutions for safety, efficiency, and sustainability.
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p> Dr. Yiqiao Li </p>
-    <p> Assistant Professor </p>
-    <p> Department of Civil Engineering </p>
-    <p> City College of New York </p>
-    <p> City University of New York </p>
+    <p><strong>Yiqiao Li, Ph.D.</strong></p>
+    <p>Assistant Professor</p>
+    <p>Dept. of Civil Engineering</p>
+    <p>City College of New York</p>
+    <p>Computer Science Program</p>
+    <p>CUNY Graduate Center</p>
+    <p>City University of New York (CUNY)</p>
+  logos: true
 
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+selected_papers: false
+social: true # show contact icons
 
 latest_posts:
   enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  scrollable: true
+  limit: 3
 ---
 
 ## Welcome
 
-Welcome to the AI & Transportation Research Lab at CCNY! Our lab is dedicated to advancing transportation research by harnessing cutting-edge technologies, including artificial intelligence, advanced sensing systems, and the Internet of Things (IoT). We develop intelligent, data-driven solutions to enhance mobility, safety, and sustainability in transportation systems. Here, you'll find information about our research projects, publications, and opportunities for collaboration.
+Welcome to the **AI & Mobility Research Lab** at City College of New York. Our lab develops intelligent, data-driven solutions for transportation systems using artificial intelligence, advanced sensing, and IoT technologies. We focus on vehicle classification, mobility analysis, VRU safety, and smart infrastructure to enhance efficiency and sustainability.
 
 ## Our Mission
 
-Our mission is to push the boundaries of transportation research by leveraging emerging technologies to develop intelligent, data-driven solutions. By focusing on areas such as vehicle classification, mobility analysis, and smart infrastructure, we aim to enhance the efficiency and safety of transportation networks. Through interdisciplinary collaboration and real-world applications, we strive to create impactful innovations that shape the future of mobility.
+We push the boundaries of transportation research by leveraging emerging technologies. Through interdisciplinary collaboration and real-world applications, we strive to create impactful innovations that shape the future of mobility.
 
 ## Visitor Analytics
 
-{% include clustrmaps.liquid d="lEvpq6tbOZ1Vp7wbIrn4foDRNxUuFL3VC6436hJYAU8" cl="ffffff" w="a" dev_preview="true" %}
+{% include clustrmaps.liquid dev_preview="true" %}

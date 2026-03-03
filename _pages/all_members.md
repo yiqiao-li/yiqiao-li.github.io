@@ -1,7 +1,7 @@
 ## Yiqiao Li
 
 <p align='justify'>
-Yiqiao Li is an assistant professor of Civil Engineering at the City College of New York. Prior to joining CCNY in January 2024, Yiqiao worked as an Assistant Project Scientist at the Institute of Transportation Studies at the University of California Irvine (ITS- Irvine). Yiqiao earned a Ph.D. degree in Civil and Environmental Engineering from the University of California, Irvine in 2021.
+Yiqiao Li is an assistant professor of Civil Engineering at the City College of New York and doctoral faculty of Computer Science Program at Graduate Center at City University of New York. Prior to joining CCNY in January 2024, Yiqiao worked as an Assistant Project Scientist at the Institute of Transportation Studies at the University of California Irvine (ITS- Irvine). Yiqiao earned a Ph.D. degree in Civil and Environmental Engineering from the University of California, Irvine in 2021.
 </p>
 
 ---
@@ -49,7 +49,7 @@ John Okoh is an Undergrad Student, NSF LSAMP Fellow, Department of Civil Enginee
 ## Taylor Caine (Undergraduate Student)
 
 <p align='justify'>
-Taylor Caine is an undergraduate student in Civil Engineering at City College of Nw York. His research focuses on [research area to be added]. Outside of research, he enjoys [interests to be added].
+Taylor Caine is an undergraduate student in Civil Engineering at City College of New York. His research focuses on [research area to be added]. Outside of research, he enjoys [interests to be added].
 </p>
 
 ---

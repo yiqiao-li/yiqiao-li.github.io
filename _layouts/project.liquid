@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{% if page._styles %}
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post project-detail">
+  <header class="project-header">
+    {% if page.img %}
+    <div class="project-hero-image">
+      {% include figure.liquid loading="eager" path=page.img sizes="95vw" alt=page.title class="project-hero-img" %}
+      <div class="project-hero-overlay"></div>
+    </div>
+    {% endif %}
+    <div class="project-header-content">
+      <h1 class="post-title project-title">{{ page.title }}</h1>
+      <div class="project-meta">
+        {% if page.year %}<span class="project-meta-item"><i class="fas fa-calendar-alt"></i> {{ page.year }}</span>{% endif %}
+        {% if page.category %}<span class="project-meta-item"><i class="fas fa-tag"></i> {{ page.category }}</span>{% endif %}
+      </div>
+      {% if page.description %}
+      <p class="post-description project-description">{{ page.description }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  <article class="project-article">
+    {{ content }}
+  </article>
+
+  {% if page.related_publications %}
+    <h2>References</h2>
+    <div class="publications">
+      {% bibliography --cited_in_order %}
+    </div>
+  {% endif %}
+
+  {% if site.giscus and page.giscus_comments %}
+    {% include giscus.liquid %}
+  {% endif %}
+</div>

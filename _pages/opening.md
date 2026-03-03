@@ -3,12 +3,29 @@ layout: page
 permalink: /opening/
 title: Opening
 nav: true
-nav_order: 7
+nav_order: 6
+_styles: |
+  .post table {
+    border: 1px solid var(--global-divider-color);
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .post table th,
+  .post table td {
+    border: 1px solid var(--global-divider-color);
+    padding: 0.6rem 1rem;
+  }
+  .post table th {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  html[data-theme="dark"] .post table th {
+    background: rgba(255, 255, 255, 0.05);
+  }
 ---
 
-## PhD Student Openings: Spring/Fall 2026
+## PhD Student Openings: Spring 2025 or Fall 2026
 
-Shape the future of urban mobility! Our AI & Transportation Research Lab at the City College of New York is seeking one highly self-motivated PhD student to join our team, with start dates in Spring 2025 or Fall 2026. If you have a background in Intelligent Transportation Systems and a passion for innovation, we encourage you to apply.
+Shape the future of urban mobility! Our AI & Mobility Research Lab at the City College of New York is seeking one highly self-motivated PhD student to join our team, with start dates in Spring 2025 or Fall 2026. If you have a background in Intelligent Transportation Systems and a passion for innovation, we encourage you to apply.
 
 Our research focuses on developing cutting-edge solutions to enhance the safety, efficiency, and sustainability of transportation systems. As a member of our collaborative group, you will work on impactful projects at the intersection of civil engineering, artificial intelligence, and advanced sensing technologies.
 
@@ -30,7 +47,20 @@ Successful candidates will contribute to one or more of the following research a
 - **Statistics:** A solid foundation in statistical methods and data analysis.
 - **Deep Learning:** Knowledge of deep learning algorithms and frameworks (e.g., TensorFlow, PyTorch) is preferred.
 - **Sensors:** Experience with traffic sensors such as LiDARs and cameras is a plus.
-- **Admissions:** Applicants must also meet the minimum requirements for graduate admission at CCNY. For details, please see the [CCNY Graduate Admissions page](https://www.ccny.cuny.edu/admissions/graduate-studies-application).
+- **Admissions:** Applicants must also meet the minimum requirements for graduate admission. See the **Application Tracks** section below for details.
+
+### Application Tracks
+
+PhD students can apply through one of two tracks depending on their intended degree program:
+
+| Track | Degree Program | Application Portal | Notes |
+|-------|----------------|---------------------|-------|
+| **Civil Engineering** | Ph.D. in Civil Engineering (Transportation) | [CCNY Graduate Admissions](https://www.ccny.cuny.edu/admissions/graduate-studies-application) | Apply directly through City College of New York. |
+| **Computer Science** | Ph.D. in Computer Science | [CUNY Graduate Center](https://www.gc.cuny.edu/admissions) | Apply through the CUNY Graduate Center. **GRE is required.** |
+
+- **Civil Engineering track:** If you are applying for a Ph.D. in Civil Engineering (Transportation), submit your application through **City College of New York (CCNY)**. For requirements and deadlines, see the [CCNY Graduate Admissions page](https://www.ccny.cuny.edu/admissions/graduate-studies-application).
+
+- **Computer Science track:** If you are applying for a Ph.D. in Computer Science, submit your application through the **CUNY Graduate Center**. The GRE is required for this track. For requirements and deadlines, see the [Graduate Center Admissions page](https://www.gc.cuny.edu/admissions).
 
 ### What We Offer
 
@@ -41,7 +71,7 @@ Successful candidates will contribute to one or more of the following research a
 
 ### How to Apply
 
-To apply, please send your CV, transcripts, and a brief statement of research interests to **Dr. Yiqiao Li** <a href="mailto:yli4@ccny.cuny.edu?subject=PhD%20Application%20Inquiry" title="Email Dr. Li"><i class="ti ti-mail"></i></a>. Please use the subject line `[Term] - PhD Application - [Your Name]` (e.g., "Spring 2025 - PhD Application - Benny Beavers").
+To apply, please send your CV and transcripts to **Dr. Yiqiao Li** <a href="mailto:{{ site.data.socials.email | encode_email }}?subject=PhD%20Application%20Inquiry" title="Email Dr. Li"><i class="ti ti-mail"></i></a>. Please use the subject line `[Term] - PhD Application - [CS or CE] - [Your Name]` (e.g., "Spring 2025 - PhD Application - CE - Benny Beavers").
 
 We look forward to receiving your application!
 
@@ -76,6 +106,14 @@ We look forward to receiving your application!
         <figure>
             <img src="/assets/img/IMG_CCNY_5.JPG" alt="CCNY Grove School of Engineering" class="img-fluid rounded mb-4">
             <figcaption class="text-center">Grove School of Engineering</figcaption>
+        </figure>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <figure>
+            <img src="/assets/img/IMG_GC_1.png" alt="CUNY Graduate Center" class="img-fluid rounded mb-4">
+            <figcaption class="text-center">CUNY Graduate Center — <a href="https://www.gc.cuny.edu/about/home" target="_blank" rel="noopener">Credit</a></figcaption>
         </figure>
     </div>
 </div>

@@ -1,7 +1,7 @@
 ---
 layout: page
 ---
-<div class="post">
+<div class="post people-page">
   <article>
     <div class="people-quicklinks">
       <strong>Jump to:</strong>
@@ -30,12 +30,10 @@ layout: page
                   {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
                   <div class="profile-image-wrapper">
                     {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
-                    {% if profile.name %}
-                      <div class="profile-name">{{ profile.name }}</div>
-                    {% endif %}
-                    {% if profile.role %}
-                      <div class="profile-role">{{ profile.role }}</div>
-                    {% endif %}
+                  </div>
+                  <div class="profile-info">
+                    {% if profile.name %}<div class="profile-name">{{ profile.name }}</div>{% endif %}
+                    {% if profile.role %}<div class="profile-role">{{ profile.role }}</div>{% endif %}
                   </div>
                 {% endif %}
                 {% if profile.more_info %}
@@ -92,12 +90,10 @@ layout: page
                     {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
                     <div class="profile-image-wrapper">
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
-                      {% if profile.name %}
-                        <div class="profile-name">{{ profile.name }}</div>
-                      {% endif %}
-                      {% if profile.role %}
-                        <div class="profile-role">{{ profile.role }}</div>
-                      {% endif %}
+                    </div>
+                    <div class="profile-info">
+                      {% if profile.name %}<div class="profile-name">{{ profile.name }}</div>{% endif %}
+                      {% if profile.role %}<div class="profile-role">{{ profile.role }}</div>{% endif %}
                     </div>
                   {% endif %}
                   {% if profile.more_info %}
@@ -150,12 +146,10 @@ layout: page
                     {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
                     <div class="profile-image-wrapper">
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
-                      {% if profile.name %}
-                        <div class="profile-name">{{ profile.name }}</div>
-                      {% endif %}
-                      {% if profile.role %}
-                        <div class="profile-role">{{ profile.role }}</div>
-                      {% endif %}
+                    </div>
+                    <div class="profile-info">
+                      {% if profile.name %}<div class="profile-name">{{ profile.name }}</div>{% endif %}
+                      {% if profile.role %}<div class="profile-role">{{ profile.role }}</div>{% endif %}
                     </div>
                   {% endif %}
                   {% if profile.more_info %}
@@ -208,12 +202,10 @@ layout: page
                     {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
                     <div class="profile-image-wrapper">
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
-                      {% if profile.name %}
-                        <div class="profile-name">{{ profile.name }}</div>
-                      {% endif %}
-                      {% if profile.role %}
-                        <div class="profile-role">{{ profile.role }}</div>
-                      {% endif %}
+                    </div>
+                    <div class="profile-info">
+                      {% if profile.name %}<div class="profile-name">{{ profile.name }}</div>{% endif %}
+                      {% if profile.role %}<div class="profile-role">{{ profile.role }}</div>{% endif %}
                     </div>
                   {% endif %}
                   {% if profile.more_info %}
@@ -266,12 +258,10 @@ layout: page
                     {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
                     <div class="profile-image-wrapper">
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
-                      {% if profile.name %}
-                        <div class="profile-name">{{ profile.name }}</div>
-                      {% endif %}
-                      {% if profile.role %}
-                        <div class="profile-role">{{ profile.role }}</div>
-                      {% endif %}
+                    </div>
+                    <div class="profile-info">
+                      {% if profile.name %}<div class="profile-name">{{ profile.name }}</div>{% endif %}
+                      {% if profile.role %}<div class="profile-role">{{ profile.role }}</div>{% endif %}
                     </div>
                   {% endif %}
                   {% if profile.more_info %}
@@ -313,7 +303,7 @@ layout: page
       {% assign past_with_end = page.past_members | where_exp: 'm', 'm.end' %}
       {% assign past_without_end = page.past_members | where_exp: 'm', 'm.end == nil' %}
       {% assign past_sorted = past_with_end | sort: 'end' | reverse %}
-      <ul>
+      <ul class="past-members-list">
         {% for member in past_sorted %}
           <li>
             {{ member.name -}}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a237e"/>
+      <stop offset="100%" style="stop-color:#283593"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b8860b"/>
+      <stop offset="100%" style="stop-color:#d4af37"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield - academic seal style -->
+  <path d="M60 6 L110 26 L110 58 Q110 94 60 114 Q10 94 10 58 L10 26 Z" fill="url(#shieldGrad)" stroke="#0d47a1" stroke-width="1"/>
+  <path d="M60 14 L102 30 L102 58 Q102 90 60 108 Q18 90 18 58 L18 30 Z" fill="none" stroke="url(#goldAccent)" stroke-width="2"/>
+  <!-- Open book - knowledge/research -->
+  <path d="M42 40 L60 48 L78 40 L78 74 L60 82 L42 74 Z" fill="none" stroke="url(#goldAccent)" stroke-width="2.5"/>
+  <path d="M50 46 L70 54 M50 58 L70 66 M50 70 L70 78" stroke="url(#goldAccent)" stroke-width="1.2"/>
+  <!-- Convergence lines - AI & Mobility -->
+  <path d="M30 58 L42 58 M78 58 L90 58" stroke="url(#goldAccent)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="60" cy="58" r="4" fill="url(#goldAccent)"/>
+</svg>

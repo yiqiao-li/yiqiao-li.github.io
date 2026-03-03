@@ -1,7 +1,11 @@
 ---
-layout: page
 title: Investigation of LiDAR Sensing Technology to Improve Traffic Monitoring Along Multilane Freeways
-description: Sponsor by California Department of Transportation (Caltrans) and UTC Region 9 Pacific Southwest Region.
+sponsor: California Department of Transportation (Caltrans) and UTC Region 9 Pacific Southwest Region
+description: >
+  LiDAR sensors along freeway corridors for traffic monitoring, compared with inductive loop detectors.
+img: assets/img/lidar_freeway.png
+year: 2021-2023
+role: Researcher
 importance: 4
 category: Past
 ---

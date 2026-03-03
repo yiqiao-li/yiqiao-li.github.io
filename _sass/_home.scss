@@ -1,0 +1,109 @@
+// Home page visual improvements
+.home-hero {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.home-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  color: var(--global-text-color);
+}
+
+.home-tagline {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+
+.home-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.home-pillar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 2rem;
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+
+  i {
+    font-size: 0.9em;
+    color: var(--global-theme-color);
+  }
+
+  &:hover {
+    background: var(--global-theme-color);
+    color: white;
+    transform: translateY(-1px);
+    text-decoration: none;
+
+    i {
+      color: white;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba(255, 255, 255, 0.08);
+
+    &:hover {
+      background: var(--global-theme-color);
+    }
+  }
+}
+
+// Profile logos (CCNY, CUNY) under profile info
+.profile-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+
+  .profile-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Improve home content section typography
+.home-root .clearfix {
+  h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--global-text-color);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+// Profile image styling on home
+.home-root .profile .profile-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
