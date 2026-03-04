@@ -42,6 +42,13 @@ current_members:
       content: all_members.md
       section: "## Wen Jie Long (Undergraduate Student)"
       image_circular: false
+    - align: left
+      name: Aidan
+      role: Undergrad Researcher
+      image: aidan.jpg
+      content: all_members.md
+      section: "## Aidan (Undergraduate Student)"
+      image_circular: false
 
   highschoolstudents:
     - align: left

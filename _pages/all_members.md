@@ -30,6 +30,9 @@ Wen Jie Long is a Computer Science Junior at City College of New York, primarily
 
 ---
 
+
+
+
 ## Chaw Nandar (Undergraduate Student)
 
 <p align='justify'>
@@ -92,4 +95,12 @@ Elizabeth Chen is a Senior at Stuyvesant High School, interested in the applicat
 
 <p align='justify'>
 Philip Jow is a Junior at The Bronx High School of Science, currently focusing on the integration of artificial intelligence, data science, and civil engineering, in order to improve transportation infrastructure in New York City. He is a member of his school’s robotics team, and his other interests include hiking, camping, and using CAD softwares.
+</p>
+
+---
+
+## Aidan (Undergraduate Student)
+
+<p align='justify'>
+Aidan Mathew is a Civil Engineering student at the City College of New York, interested in how Vision-Language Models can be used to provide solutions for practical Civil Engineering problems. He is currently a member of the CE Student Council and ASCE CCNY chapter. His hobbies include traveling and video games.
 </p>
