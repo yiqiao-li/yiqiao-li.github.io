@@ -30,9 +30,6 @@ Wen Jie Long is a Computer Science Junior at City College of New York, primarily
 
 ---
 
-
-
-
 ## Chaw Nandar (Undergraduate Student)
 
 <p align='justify'>

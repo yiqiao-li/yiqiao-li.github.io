@@ -12,8 +12,8 @@ layout: default
       {% endif %}
     </h1>
     {% if page.subtitle %}
-    <p class="home-tagline">{{ page.subtitle }}</p>
-{% endif %}
+      <p class="home-tagline">{{ page.subtitle }}</p>
+    {% endif %}
     <div class="home-pillars">
       <a href="{{ '/projects/#Current' | relative_url }}" class="home-pillar"><i class="fas fa-flask"></i> Research</a>
       <a href="{{ '/people/' | relative_url }}" class="home-pillar"><i class="fas fa-users"></i> People</a>
@@ -46,10 +46,14 @@ layout: default
             <div class="contact-icons small-icons">{% include social.liquid %}</div>
           </div>
           {% if page.profile.logos %}
-          <div class="profile-logos mt-3">
-            <a href="https://www.ccny.cuny.edu" target="_blank" rel="noopener" title="City College of New York"><img src="{{ '/assets/img/ccny_logo.png' | relative_url }}" alt="CCNY" class="profile-logo"></a>
-            <a href="https://www.cuny.edu" target="_blank" rel="noopener" title="City University of New York"><img src="{{ '/assets/img/cuny_logo.png' | relative_url }}" alt="CUNY" class="profile-logo"></a>
-          </div>
+            <div class="profile-logos mt-3">
+              <a href="https://www.ccny.cuny.edu" target="_blank" rel="noopener" title="City College of New York"
+                ><img src="{{ '/assets/img/ccny_logo.png' | relative_url }}" alt="CCNY" class="profile-logo"
+              ></a>
+              <a href="https://www.cuny.edu" target="_blank" rel="noopener" title="City University of New York"
+                ><img src="{{ '/assets/img/cuny_logo.png' | relative_url }}" alt="CUNY" class="profile-logo"
+              ></a>
+            </div>
           {% endif %}
         {% endif %}
       </div>

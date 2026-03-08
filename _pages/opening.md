@@ -53,10 +53,10 @@ Successful candidates will contribute to one or more of the following research a
 
 PhD students can apply through one of two tracks depending on their intended degree program:
 
-| Track | Degree Program | Application Portal | Notes |
-|-------|----------------|---------------------|-------|
-| **Civil Engineering** | Ph.D. in Civil Engineering (Transportation) | [CCNY Graduate Admissions](https://www.ccny.cuny.edu/admissions/graduate-studies-application) | Apply directly through City College of New York. |
-| **Computer Science** | Ph.D. in Computer Science | [CUNY Graduate Center](https://www.gc.cuny.edu/admissions) | Apply through the CUNY Graduate Center. **GRE is required.** |
+| Track                 | Degree Program                              | Application Portal                                                                            | Notes                                                        |
+| --------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| **Civil Engineering** | Ph.D. in Civil Engineering (Transportation) | [CCNY Graduate Admissions](https://www.ccny.cuny.edu/admissions/graduate-studies-application) | Apply directly through City College of New York.             |
+| **Computer Science**  | Ph.D. in Computer Science                   | [CUNY Graduate Center](https://www.gc.cuny.edu/admissions)                                    | Apply through the CUNY Graduate Center. **GRE is required.** |
 
 - **Civil Engineering track:** If you are applying for a Ph.D. in Civil Engineering (Transportation), submit your application through **City College of New York (CCNY)**. For requirements and deadlines, see the [CCNY Graduate Admissions page](https://www.ccny.cuny.edu/admissions/graduate-studies-application).
 

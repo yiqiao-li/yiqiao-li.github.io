@@ -9,6 +9,7 @@ This site is static (Jekyll on GitHub Pages). To avoid exposing any Supabase tok
 ## 1) Immediately rotate exposed keys (if any)
 
 If any keys were committed or shared:
+
 - In Supabase Dashboard → Project Settings → API: Regenerate the anon key.
 - If you’re unsure what was exposed, rotate the JWT secret (this rotates all keys). You must then update your clients/functions.
 
@@ -48,6 +49,7 @@ Note: `service_role` bypasses RLS by design; use it only inside server-side code
 ## 3) Use Supabase Edge Functions (no client tokens)
 
 Example workflow:
+
 1. Create an Edge Function in Supabase (e.g., `get_public_data`).
 2. In the function, use `service_role` via environment variable (set in the Supabase dashboard). Validate inputs and return only safe data.
 3. From your GitHub Pages site, call:
@@ -59,6 +61,7 @@ This keeps all secrets server-side while allowing a public site to read data.
 ## 4) Optional: Build-time data fetch (GitHub Actions)
 
 If you need to pre-render content:
+
 - Store `SUPABASE_URL` and `SERVICE_ROLE` (or a dedicated token) in GitHub Actions Secrets.
 - In your workflow, fetch data (ideally via your Edge Function) and write JSON files under `assets/json/`.
 - Never echo secrets in logs; never commit them.
@@ -70,14 +73,16 @@ Use `.env` locally (not committed) for tools or scripts. See `.env.example`.
 ## 6) Docker local preview
 
 To run locally with Docker:
+
 ```bash
 docker compose up --build
 ```
+
 Then visit http://localhost:8080
 
 ## Quick checklist
+
 - RLS enabled on all user-facing tables with minimal policies.
 - No Supabase keys in the repository, HTML, JS, or devtools.
 - Any data access happens via Edge Functions (no tokens in browser).
 - Any build-time access uses GitHub Actions Secrets.
-

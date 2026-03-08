@@ -30,7 +30,9 @@
     border-radius: 2rem;
     color: var(--global-text-color);
     text-decoration: none;
-    transition: background 0.2s, color 0.2s;
+    transition:
+      background 0.2s,
+      color 0.2s;
     margin-left: 0 !important;
 
     &:hover {

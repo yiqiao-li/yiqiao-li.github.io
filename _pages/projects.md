@@ -21,8 +21,9 @@ horizontal: true
     <span class="pillar"><i class="fas fa-database"></i> Data Analytics</span>
   </div>
 
-  {% assign current_count = site.projects | where: "category", "Current" | size %}
-  {% assign past_count = site.projects | where: "category", "Past" | size %}
+{% assign current_count = site.projects | where: "category", "Current" | size %}
+{% assign past_count = site.projects | where: "category", "Past" | size %}
+
   <div class="research-stats">
     <a href="#Current" class="stat-badge">
       <strong>{{ current_count }}</strong> Active

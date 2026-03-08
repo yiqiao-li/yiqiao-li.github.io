@@ -10,17 +10,18 @@ Research projects are stored as Markdown files in this folder. Each file becomes
 2. **Required frontmatter**  
    Fill in these fields in the YAML header:
 
-   | Field | Description | Example |
-   |-------|-------------|---------|
-   | `title` | Full project title | `My Research Project` |
+   | Field         | Description                              | Example                     |
+   | ------------- | ---------------------------------------- | --------------------------- |
+   | `title`       | Full project title                       | `My Research Project`       |
    | `description` | Short summary for the Research page card | Include Sponsor, Role, Year |
-   | `year` | Year or range | `2025` or `2024-2026` |
-   | `importance` | Display order (lower = first) | `1`, `2`, `3`... |
-   | `category` | `Current` or `Past` | `Current` |
-   | `role` | PI, co-PI, Researcher, etc. (optional) | `PI` |
-   | `img` | Image path (optional) | `assets/img/project.png` |
+   | `year`        | Year or range                            | `2025` or `2024-2026`       |
+   | `importance`  | Display order (lower = first)            | `1`, `2`, `3`...            |
+   | `category`    | `Current` or `Past`                      | `Current`                   |
+   | `role`        | PI, co-PI, Researcher, etc. (optional)   | `PI`                        |
+   | `img`         | Image path (optional)                    | `assets/img/project.png`    |
 
 3. **Optional frontmatter**
+
    - `related_publications: true` — Shows a References section (cite papers in content with `{% cite key %}`)
    - `giscus_comments: false` — Disable comments
 
@@ -46,6 +47,7 @@ Research projects are stored as Markdown files in this folder. Each file becomes
 ## Defaults
 
 All projects inherit from `_config.yml`:
+
 - Layout: `project`
 - `related_publications: false`
 - `giscus_comments: false`

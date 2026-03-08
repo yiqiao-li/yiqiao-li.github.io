@@ -49,7 +49,6 @@ current_members:
       content: all_members.md
       section: "## Wen Jie Long (Undergraduate Student)"
       image_circular: false
-    
 
   highschoolstudents:
     - align: left

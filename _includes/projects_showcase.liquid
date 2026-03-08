@@ -12,15 +12,23 @@
         {% endif %}
         <div class="project-card-overlay"></div>
         <div class="project-card-badges">
-          {% if project.category %}<span class="badge badge-category">{{ project.category }}</span>{% endif %}
+          {% if project.category -%}
+            <span class="badge badge-category">{{ project.category }}</span>
+          {%- endif %}
         </div>
       </div>
       <div class="card-body">
         <h3 class="card-title project-card-title">{{ project.title }}</h3>
         <div class="project-card-meta">
-          {% if project.sponsor %}<div class="project-card-meta-row"><span class="project-card-meta-label">Sponsor:</span> {{ project.sponsor }}</div>{% endif %}
-          {% if project.role %}<div class="project-card-meta-row"><span class="project-card-meta-label">Role:</span> {{ project.role }}</div>{% endif %}
-          {% if project.year %}<div class="project-card-meta-row"><span class="project-card-meta-label">Year:</span> {{ project.year }}</div>{% endif %}
+          {% if project.sponsor %}
+            <div class="project-card-meta-row"><span class="project-card-meta-label">Sponsor:</span> {{ project.sponsor }}</div>
+          {% endif %}
+          {% if project.role %}
+            <div class="project-card-meta-row"><span class="project-card-meta-label">Role:</span> {{ project.role }}</div>
+          {% endif %}
+          {% if project.year %}
+            <div class="project-card-meta-row"><span class="project-card-meta-label">Year:</span> {{ project.year }}</div>
+          {% endif %}
         </div>
         {% assign desc_clean = project.description | strip_html | truncate: 160 %}
         <p class="project-card-description">{{ desc_clean }}</p>

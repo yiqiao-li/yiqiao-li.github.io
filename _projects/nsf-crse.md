@@ -22,6 +22,7 @@ Description: The Collaborative Research at the Intersection of Statistics and En
 The workshop will be held **August 11–13, 2026** at the Wharton School, University of Pennsylvania, Philadelphia, PA.
 
 **Workshop objectives:**
+
 - Advance collaboration between statisticians and engineers
 - Provide training and feedback opportunities for Ph.D. students
 - Facilitate discussions on high-dimensional data analysis and its applications
