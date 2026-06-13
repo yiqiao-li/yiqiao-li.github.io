@@ -2,8 +2,8 @@ name: Update Publications
 
 on:
   schedule:
-    - cron: '0 6 1 1,4,7,10 *'  # Every quarter (Jan/Apr/Jul/Oct 1st) at 06:00 UTC
-  workflow_dispatch:       # Allow manual trigger from GitHub Actions UI
+    - cron: "0 6 1 1,4,7,10 *" # Every quarter (Jan/Apr/Jul/Oct 1st) at 06:00 UTC
+  workflow_dispatch: # Allow manual trigger from GitHub Actions UI
 
 permissions:
   contents: write
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install scholarly
         run: pip install scholarly

@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false  # let each deploy finish; queue instead of cancel
+  cancel-in-progress: false # let each deploy finish; queue instead of cancel
 
 jobs:
   build:

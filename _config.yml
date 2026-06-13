@@ -413,7 +413,7 @@ enable_video_embedding: false # enables video embedding for bibtex entries. If f
 mapmyvisitors:
   d: Uu1FvN0HYt-uCHXsTejU2YlpoSiZCVXyOrCY-SNwwi8
   cl: ffffff # dot/text color (ffffff = white)
-  w: a       # width (a = auto)
+  w: a # width (a = auto)
 
 # -----------------------------------------------------------------------------
 # Library versions

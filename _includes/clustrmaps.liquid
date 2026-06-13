@@ -1,7 +1,7 @@
 <div class="mapmyvisitors-widget" style="margin: 1rem 0; min-height: 260px;">
   {% assign mmv_id = include.d | default: site.mapmyvisitors.d %}
   {% assign mmv_cl = include.cl | default: site.mapmyvisitors.cl | default: 'ffffff' %}
-  {% assign mmv_w  = include.w  | default: site.mapmyvisitors.w  | default: 'a' %}
+  {% assign mmv_w = include.w | default: site.mapmyvisitors.w | default: 'a' %}
   {% assign dev_preview = include.dev_preview | default: false %}
   {% if mmv_id %}
     <div id="mapmyvisitors-container"></div>
