@@ -1,6 +1,6 @@
 ---
 title: Leveraging Multimodal LLM for Efficient Understanding of VRU via Multimodal Traffic Sensing Approach
-sponsor: US DOT – UTC (pending)
+sponsor: US DOT – UTC
 description: >
   This project transitions from manual labeling toward a self-learning AI system powered by MLLMs, integrating VLMs into annotation pipelines and active agents for VRU detection and classification.
 img: assets/img/mllm_vru.png

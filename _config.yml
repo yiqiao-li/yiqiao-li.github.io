@@ -16,7 +16,7 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: AI, transportation, mobility, CCNY, civil engineering, traffic monitoring, LiDAR, machine learning
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: lab_logo_truck.png # favicon (image name in /assets/img/)
+icon: lab_logo_v3.svg # favicon (image name in /assets/img/)
 
 url: https://yiqiao-li.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -404,14 +404,16 @@ enable_progressbar: true # enables a horizontal progress bar linked to the verti
 enable_video_embedding: false # enables video embedding for bibtex entries. If false, the button opens the video link in a new window.
 
 # -----------------------------------------------------------------------------
-# ClustrMaps
+# MapMyVisitors (Visitor Analytics)
 # -----------------------------------------------------------------------------
-# Obtain your embed code at clustrmaps.com and copy the "d" parameter value.
-# Example embed: //www.clustrmaps.com/map_v2.js?d=YOUR_ID&cl=ffffff&w=a
-clustrmaps:
-  d: lEvpq6tbOZ1Vp7wbIrn4foDRNxUuFL3VC6436hJYAU8
-  cl: ffffff
-  w: a
+# 1. Go to https://mapmyvisitors.com and sign up (free)
+# 2. Add your site URL to get a widget key
+# 3. Copy the "d" parameter from the generated <script> src URL
+# Example src: //mapmyvisitors.com/map.js?d=YOUR_KEY&cl=ffffff&w=a
+mapmyvisitors:
+  d: Uu1FvN0HYt-uCHXsTejU2YlpoSiZCVXyOrCY-SNwwi8
+  cl: ffffff # dot/text color (ffffff = white)
+  w: a       # width (a = auto)
 
 # -----------------------------------------------------------------------------
 # Library versions

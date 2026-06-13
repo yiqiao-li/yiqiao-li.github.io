@@ -1,28 +1,28 @@
-<div class="clustrmaps-widget" style="margin: 1rem 0; min-height: 260px;">
-  {% assign d_param = include.d | default: site.clustrmaps.d %}
-  {% assign cl_param = include.cl | default: site.clustrmaps.cl | default: 'ffffff' %}
-  {% assign w_param = include.w | default: site.clustrmaps.w | default: 'a' %}
+<div class="mapmyvisitors-widget" style="margin: 1rem 0; min-height: 260px;">
+  {% assign mmv_id = include.d | default: site.mapmyvisitors.d %}
+  {% assign mmv_cl = include.cl | default: site.mapmyvisitors.cl | default: 'ffffff' %}
+  {% assign mmv_w  = include.w  | default: site.mapmyvisitors.w  | default: 'a' %}
   {% assign dev_preview = include.dev_preview | default: false %}
-  {% if d_param %}
-    <div id="clustrmaps-container"></div>
+  {% if mmv_id %}
+    <div id="mapmyvisitors-container"></div>
     <script>
       (function () {
         try {
           var host = (window.location && window.location.hostname) || '';
           var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0';
           var devPreview = '{{ dev_preview }}' === 'true';
-          var container = document.getElementById('clustrmaps-container');
+          var container = document.getElementById('mapmyvisitors-container');
           if (!container) return;
           if (isLocal && !devPreview) {
             container.innerHTML =
-              '<div style="padding: 1rem; border: 1px dashed var(--global-divider-color); border-radius: 8px; color: var(--global-text-color-light);">ClustrMaps preview is hidden in local development. View on the live site to see the map.</div>';
+              '<div style="padding: 1rem; border: 1px dashed var(--global-divider-color); border-radius: 8px; color: var(--global-text-color-light);">MapMyVisitors preview is hidden in local development. View on the live site to see the map.</div>';
             return;
           }
           var s = document.createElement('script');
           s.type = 'text/javascript';
           s.async = true;
-          s.id = 'clustrmaps';
-          s.src = 'https://www.clustrmaps.com/map_v2.js?d={{ d_param | escape }}&cl={{ cl_param }}&w={{ w_param }}';
+          s.id = 'mapmyvisitors';
+          s.src = '//mapmyvisitors.com/map.js?d={{ mmv_id | escape }}&cl={{ mmv_cl }}&w={{ mmv_w }}';
           container.appendChild(s);
         } catch (e) {
           // no-op
@@ -31,12 +31,12 @@
     </script>
     <noscript>
       <div style="padding: 1rem; border: 1px dashed var(--global-divider-color); border-radius: 8px; color: var(--global-text-color-light);">
-        JavaScript is disabled; ClustrMaps cannot load.
+        JavaScript is disabled; MapMyVisitors cannot load.
       </div>
     </noscript>
   {% else %}
     <div style="padding: 1rem; border: 1px dashed var(--global-divider-color); border-radius: 8px; color: var(--global-text-color-light);">
-      ClustrMaps is not configured. Add your identifier under <code>clustrmaps.d</code> in <code>_config.yml</code>.
+      MapMyVisitors is not configured. Add your site key under <code>mapmyvisitors.d</code> in <code>_config.yml</code>.
     </div>
   {% endif %}
 </div>
