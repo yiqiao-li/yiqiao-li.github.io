@@ -3,6 +3,38 @@ layout: page
 ---
 <div class="post people-page">
   <article>
+    {% assign pi_count = page.principal_investigator | size %}
+    {% assign postdoc_count = page.current_members.postdoctoralresearcher | size %}
+    {% assign grad_count = page.current_members.graduatestudents | size %}
+    {% assign undergrad_count = page.current_members.undergraduatestudents | size %}
+    {% assign highschool_count = page.current_members.highschoolstudents | size %}
+    {% assign current_total = postdoc_count | plus: grad_count | plus: undergrad_count | plus: highschool_count %}
+
+    <div class="people-overview">
+      <div>
+        <p class="people-kicker">AI & Mobility Research Lab</p>
+        <h2>Lab Members</h2>
+      </div>
+      <div class="people-summary">
+        <a href="#grad" class="people-summary-item">
+          <span>{{ grad_count }}</span>
+          <small>Graduate</small>
+        </a>
+        <a href="#undergrad" class="people-summary-item">
+          <span>{{ undergrad_count }}</span>
+          <small>Undergrad</small>
+        </a>
+        <a href="#highschool" class="people-summary-item">
+          <span>{{ highschool_count }}</span>
+          <small>High School</small>
+        </a>
+        <a href="#past" class="people-summary-item">
+          <span>{{ page.past_members | size }}</span>
+          <small>Alumni</small>
+        </a>
+      </div>
+    </div>
+
     <div class="people-quicklinks">
       <strong>Jump to:</strong>
       <a href="#pi">PI</a>
@@ -12,10 +44,13 @@ layout: page
       <a href="#highschool">High School</a>
       <a href="#past">Past Members</a>
     </div>
-    <!-- Principal Investigator Section -->
+
     {% if page.principal_investigator %}
-      <h2 class="section-title" id="pi">Principal Investigator</h2>
-      <div class="members-section">
+      <h2 class="section-title" id="pi">
+        <span>Principal Investigator</span>
+        <small>{{ pi_count }}</small>
+      </h2>
+      <div class="members-section pi-section">
         {% for profile in page.principal_investigator %}
           <div class="member-profile people-card">
             <div class="profile-container">
@@ -27,7 +62,7 @@ layout: page
                     {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
                   {% endif %}
                   {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-                  {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                  {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3 }}px, (min-width: 576px) 30vw, 95vw{% endcapture %}
                   <div class="profile-image-wrapper">
                     {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                   </div>
@@ -36,17 +71,15 @@ layout: page
                       <div class="profile-name">{{ profile.name }}</div>
                     {% endif %}
                     {% if profile.role %}
-                      <div class="profile-role">{{ profile.role }}</div>
+                      <div class="profile-role">{{ profile.role | replace: ', ', ' &middot; ' }}</div>
                     {% endif %}
                   </div>
                 {% endif %}
                 {% if profile.more_info %}
-                  <div class="more-info">
-                    {{ profile.more_info }}
-                  </div>
+                  <div class="more-info">{{ profile.more_info }}</div>
                 {% endif %}
               </div>
-              <div class="clearfix">
+              <div class="clearfix member-bio">
                 {% if profile.content %}
                   {% if profile.section %}
                     {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
@@ -72,14 +105,18 @@ layout: page
       </div>
     {% endif %}
 
-    <!-- Current Members Section -->
     {% if page.current_members %}
-      <h2 class="section-title">Current Members</h2>
+      <h2 class="section-title">
+        <span>Current Members</span>
+        <small>{{ current_total }}</small>
+      </h2>
 
-      <!-- Postdoctoral Researcher Subsection -->
       {% if page.current_members.postdoctoralresearcher %}
-        <h3 class="subsection-title" id="postdoc">Postdoctoral Researcher</h3>
-        <div class="members-section">
+        <h3 class="subsection-title" id="postdoc">
+          <span>Postdoctoral Researcher</span>
+          <small>{{ postdoc_count }}</small>
+        </h3>
+        <div class="members-section member-grid">
           {% for profile in page.current_members.postdoctoralresearcher %}
             <div class="member-profile people-card">
               <div class="profile-container">
@@ -91,7 +128,7 @@ layout: page
                       {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
                     {% endif %}
                     {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3 }}px, (min-width: 576px) 30vw, 95vw{% endcapture %}
                     <div class="profile-image-wrapper">
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                     </div>
@@ -100,32 +137,22 @@ layout: page
                         <div class="profile-name">{{ profile.name }}</div>
                       {% endif %}
                       {% if profile.role %}
-                        <div class="profile-role">{{ profile.role }}</div>
+                        <div class="profile-role">{{ profile.role | replace: ', ', ' &middot; ' }}</div>
                       {% endif %}
                     </div>
                   {% endif %}
-                  {% if profile.more_info %}
-                    <div class="more-info">
-                      {{ profile.more_info }}
-                    </div>
-                  {% endif %}
                 </div>
-                <div class="clearfix">
-                  {% if profile.content %}
-                    {% if profile.section %}
-                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-                      {% assign lines = profile_content | split: '---' %}
-                      {% for line in lines %}
-                        {% if line contains profile.section %}
-                          {% assign section_content = line | split: profile.section | last %}
-                          {{ section_content | markdownify }}
-                          {% break %}
-                        {% endif %}
-                      {% endfor %}
-                    {% else %}
-                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-                      {{ profile_content | markdownify }}
-                    {% endif %}
+                <div class="clearfix member-bio">
+                  {% if profile.content and profile.section %}
+                    {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                    {% assign lines = profile_content | split: '---' %}
+                    {% for line in lines %}
+                      {% if line contains profile.section %}
+                        {% assign section_content = line | split: profile.section | last %}
+                        {{ section_content | markdownify }}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
                   {% else %}
                     {{ profile.excerpt }}
                   {% endif %}
@@ -136,10 +163,12 @@ layout: page
         </div>
       {% endif %}
 
-      <!-- Graduate Students Subsection -->
       {% if page.current_members.graduatestudents %}
-        <h3 class="subsection-title" id="grad">Graduate Students</h3>
-        <div class="members-section">
+        <h3 class="subsection-title" id="grad">
+          <span>Graduate Students</span>
+          <small>{{ grad_count }}</small>
+        </h3>
+        <div class="members-section member-grid">
           {% for profile in page.current_members.graduatestudents %}
             <div class="member-profile people-card">
               <div class="profile-container">
@@ -151,7 +180,7 @@ layout: page
                       {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
                     {% endif %}
                     {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3 }}px, (min-width: 576px) 30vw, 95vw{% endcapture %}
                     <div class="profile-image-wrapper">
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                     </div>
@@ -160,32 +189,22 @@ layout: page
                         <div class="profile-name">{{ profile.name }}</div>
                       {% endif %}
                       {% if profile.role %}
-                        <div class="profile-role">{{ profile.role }}</div>
+                        <div class="profile-role">{{ profile.role | replace: ', ', ' &middot; ' }}</div>
                       {% endif %}
                     </div>
                   {% endif %}
-                  {% if profile.more_info %}
-                    <div class="more-info">
-                      {{ profile.more_info }}
-                    </div>
-                  {% endif %}
                 </div>
-                <div class="clearfix">
-                  {% if profile.content %}
-                    {% if profile.section %}
-                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-                      {% assign lines = profile_content | split: '---' %}
-                      {% for line in lines %}
-                        {% if line contains profile.section %}
-                          {% assign section_content = line | split: profile.section | last %}
-                          {{ section_content | markdownify }}
-                          {% break %}
-                        {% endif %}
-                      {% endfor %}
-                    {% else %}
-                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-                      {{ profile_content | markdownify }}
-                    {% endif %}
+                <div class="clearfix member-bio">
+                  {% if profile.content and profile.section %}
+                    {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                    {% assign lines = profile_content | split: '---' %}
+                    {% for line in lines %}
+                      {% if line contains profile.section %}
+                        {% assign section_content = line | split: profile.section | last %}
+                        {{ section_content | markdownify }}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
                   {% else %}
                     {{ profile.excerpt }}
                   {% endif %}
@@ -196,10 +215,12 @@ layout: page
         </div>
       {% endif %}
 
-      <!-- Undergraduate Students Subsection -->
       {% if page.current_members.undergraduatestudents %}
-        <h3 class="subsection-title" id="undergrad">Undergraduate Students</h3>
-        <div class="members-section">
+        <h3 class="subsection-title" id="undergrad">
+          <span>Undergraduate Students</span>
+          <small>{{ undergrad_count }}</small>
+        </h3>
+        <div class="members-section member-grid">
           {% for profile in page.current_members.undergraduatestudents %}
             <div class="member-profile people-card">
               <div class="profile-container">
@@ -211,7 +232,7 @@ layout: page
                       {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
                     {% endif %}
                     {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3 }}px, (min-width: 576px) 30vw, 95vw{% endcapture %}
                     <div class="profile-image-wrapper">
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                     </div>
@@ -220,32 +241,22 @@ layout: page
                         <div class="profile-name">{{ profile.name }}</div>
                       {% endif %}
                       {% if profile.role %}
-                        <div class="profile-role">{{ profile.role }}</div>
+                        <div class="profile-role">{{ profile.role | replace: ', ', ' &middot; ' }}</div>
                       {% endif %}
                     </div>
                   {% endif %}
-                  {% if profile.more_info %}
-                    <div class="more-info">
-                      {{ profile.more_info }}
-                    </div>
-                  {% endif %}
                 </div>
-                <div class="clearfix">
-                  {% if profile.content %}
-                    {% if profile.section %}
-                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-                      {% assign lines = profile_content | split: '---' %}
-                      {% for line in lines %}
-                        {% if line contains profile.section %}
-                          {% assign section_content = line | split: profile.section | last %}
-                          {{ section_content | markdownify }}
-                          {% break %}
-                        {% endif %}
-                      {% endfor %}
-                    {% else %}
-                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-                      {{ profile_content | markdownify }}
-                    {% endif %}
+                <div class="clearfix member-bio">
+                  {% if profile.content and profile.section %}
+                    {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                    {% assign lines = profile_content | split: '---' %}
+                    {% for line in lines %}
+                      {% if line contains profile.section %}
+                        {% assign section_content = line | split: profile.section | last %}
+                        {{ section_content | markdownify }}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
                   {% else %}
                     {{ profile.excerpt }}
                   {% endif %}
@@ -256,10 +267,12 @@ layout: page
         </div>
       {% endif %}
 
-      <!-- High School Students Subsection -->
       {% if page.current_members.highschoolstudents and page.current_members.highschoolstudents.size > 0 %}
-        <h3 class="subsection-title" id="highschool">High School Students</h3>
-        <div class="members-section">
+        <h3 class="subsection-title" id="highschool">
+          <span>High School Students</span>
+          <small>{{ highschool_count }}</small>
+        </h3>
+        <div class="members-section member-grid">
           {% for profile in page.current_members.highschoolstudents %}
             <div class="member-profile people-card">
               <div class="profile-container">
@@ -271,7 +284,7 @@ layout: page
                       {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
                     {% endif %}
                     {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+                    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3 }}px, (min-width: 576px) 30vw, 95vw{% endcapture %}
                     <div class="profile-image-wrapper">
                       {% include figure.liquid path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
                     </div>
@@ -280,32 +293,22 @@ layout: page
                         <div class="profile-name">{{ profile.name }}</div>
                       {% endif %}
                       {% if profile.role %}
-                        <div class="profile-role">{{ profile.role }}</div>
+                        <div class="profile-role">{{ profile.role | replace: ', ', ' &middot; ' }}</div>
                       {% endif %}
                     </div>
                   {% endif %}
-                  {% if profile.more_info %}
-                    <div class="more-info">
-                      {{ profile.more_info }}
-                    </div>
-                  {% endif %}
                 </div>
-                <div class="clearfix">
-                  {% if profile.content %}
-                    {% if profile.section %}
-                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-                      {% assign lines = profile_content | split: '---' %}
-                      {% for line in lines %}
-                        {% if line contains profile.section %}
-                          {% assign section_content = line | split: profile.section | last %}
-                          {{ section_content | markdownify }}
-                          {% break %}
-                        {% endif %}
-                      {% endfor %}
-                    {% else %}
-                      {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-                      {{ profile_content | markdownify }}
-                    {% endif %}
+                <div class="clearfix member-bio">
+                  {% if profile.content and profile.section %}
+                    {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+                    {% assign lines = profile_content | split: '---' %}
+                    {% for line in lines %}
+                      {% if line contains profile.section %}
+                        {% assign section_content = line | split: profile.section | last %}
+                        {{ section_content | markdownify }}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
                   {% else %}
                     {{ profile.excerpt }}
                   {% endif %}
@@ -317,42 +320,34 @@ layout: page
       {% endif %}
     {% endif %}
 
-    <!-- Past Members Section -->
     {% if page.past_members %}
-      <h2 class="section-title" id="past">Past Members</h2>
+      <h2 class="section-title" id="past">
+        <span>Past Members</span>
+        <small>{{ page.past_members | size }}</small>
+      </h2>
       {% assign past_with_end = page.past_members | where_exp: 'm', 'm.end' %}
       {% assign past_without_end = page.past_members | where_exp: 'm', 'm.end == nil' %}
       {% assign past_sorted = past_with_end | sort: 'end' | reverse %}
-      <ul class="past-members-list">
+      <div class="past-members-table">
         {% for member in past_sorted %}
-          <li>
-            {{ member.name -}}
-            {% if member.start or member.end %}
-              (
-              <span class="member-duration">
-                {% if member.start %}{{ member.start }}{% endif %}
-                {% if member.start and member.end %}&ndash;{% endif %}
-                {% if member.end %}{{ member.end }}{% endif %}
-              </span>
-              )
-            {% endif %}
-            {%- if member.affiliation %}
-              — <em>{{ member.affiliation }}</em>
-            {%- endif %}
-          </li>
+          <div class="past-member-row">
+            <div class="past-member-name">{{ member.name }}</div>
+            <div class="past-member-affiliation">{{ member.affiliation }}</div>
+            <div class="past-member-duration">
+              {% if member.start %}{{ member.start }}{% endif %}
+              {% if member.start and member.end %}-{% endif %}
+              {% if member.end %}{{ member.end }}{% endif %}
+            </div>
+          </div>
         {% endfor %}
         {% for member in past_without_end %}
-          <li>
-            {{ member.name -}}
-            {% if member.start %}
-              ( <span class="member-duration">{{ member.start }}</span> )
-            {% endif %}
-            {%- if member.affiliation %}
-              — <em>{{ member.affiliation }}</em>
-            {%- endif %}
-          </li>
+          <div class="past-member-row">
+            <div class="past-member-name">{{ member.name }}</div>
+            <div class="past-member-affiliation">{{ member.affiliation }}</div>
+            <div class="past-member-duration">{% if member.start %}{{ member.start }}{% endif %}</div>
+          </div>
         {% endfor %}
-      </ul>
+      </div>
     {% endif %}
   </article>
 </div>

@@ -22,6 +22,22 @@ Faed Ahmed Arnob is a PhD student in Civil Engineering (Transportation) at The C
 
 ---
 
+## Yingying Zhou (Graduate Student)
+
+<p align='justify'>
+Yingying Zhou is a PhD student in Computer Science at the CUNY Graduate Center. She received her M.S. in Computer Science from Tufts University, where she conducted research on Android Auto protocol security. Her current research focuses on computer vision and LiDAR-based perception for intelligent transportation systems, including object detection, tracking, and traffic safety analysis. Outside of academia, she enjoys playing tennis, traveling, and crocheting.
+</p>
+
+---
+
+## Salsabil Salah (Graduate Student)
+
+<p align='justify'>
+Salsabil Salah is a PhD student from the Department of Civil Engineering and a TREAD Fellow in Transportation Engineering at The City College of New York. She holds an MS in Business Analytics from Duke University and a BS in Electrical Engineering from Purdue University, and has industry experience in electric vehicles and charging infrastructure. Outside academia, she enjoys running.
+</p>
+
+---
+
 ## Wen Jie Long (Undergraduate Student)
 
 <p align='justify'>

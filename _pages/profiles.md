@@ -28,23 +28,37 @@ current_members:
   graduatestudents:
     - align: left
       name: Faed Arnob
-      role: PhD Student
+      role: PhD Student, Civil Engineering
       image: faed.jpg
       content: all_members.md
       section: "## Faed Arnob (Graduate Student)"
+      image_circular: false
+    - align: left
+      name: Yingying Zhou
+      role: PhD Student, Computer Science
+      image: yingying.jpg
+      content: all_members.md
+      section: "## Yingying Zhou (Graduate Student)"
+      image_circular: false
+    - align: left
+      name: Salsabil Salah
+      role: PhD Student, Civil Engineering
+      image: salsabil.jpg
+      content: all_members.md
+      section: "## Salsabil Salah (Graduate Student)"
       image_circular: false
 
   undergraduatestudents:
     - align: left
       name: Aidan Mathew
-      role: Undergrad Researcher
+      role: Undergraduate Student, Civil Engineering
       image: aidan.jpg
       content: all_members.md
       section: "## Aidan (Undergraduate Student)"
       image_circular: false
     - align: left
       name: Wen Jie Long
-      role: Undergrad Researcher
+      role: Undergraduate Student, Computer Science
       image: wenjie.png
       content: all_members.md
       section: "## Wen Jie Long (Undergraduate Student)"

@@ -16,7 +16,7 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: AI, transportation, mobility, CCNY, civil engineering, traffic monitoring, LiDAR, machine learning
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: lab_logo_v3.svg # favicon (image name in /assets/img/)
+icon: lab_logo_truck.png # favicon (image name in /assets/img/)
 
 url: https://yiqiao-li.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
